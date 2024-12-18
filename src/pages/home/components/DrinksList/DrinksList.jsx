@@ -1,30 +1,10 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
+import { useFetch } from "../../../../hooks/useFetch";
 import "./DrinksList.scss";
 
 export const DrinksList = () => {
-  const [drinks, setDrinks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/drinks")
-      .then((response) => {
-        if(!response.ok) {
-          throw new Error("Failed to fetch drinks list");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setDrinks(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      }, []);
-  })
+  const { data: drinks, loading, error } = useFetch("drinks");
 
   if (loading) {
     return <p>Loading drinks list...</p>;

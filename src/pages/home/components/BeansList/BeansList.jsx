@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
-import "./BeansList.scss";
 import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
+import { useFetch } from "../../../../hooks/useFetch";
+import "./BeansList.scss";
 
 export const BeansList = () => {
+  const { data: beans, loading, error } = useFetch("beans");
+
+  if (loading) {
+    return <p>Loading drinks list...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div>

@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom"
 import { useState } from "react";
-import "./DrinkPage.scss";
 import { BackArrow } from "../../shared/UI/BackArrow/BackArrow";
 import { LikeHeart } from "../../shared/UI/LikeHeart/LikeHeart";
 import { Button } from "../../shared/UI/Button/Button";
-
+import { useFetch } from "../../hooks/useFetch";
+import "./DrinkPage.scss";
 
 export const Drink = () => {
+    const { data: drinks, loading, error } = useFetch("drinks");
     const { id } = useParams();
-    const drink = drinks.find(item => item.id === parseInt(id));
+    const drink = drinks?.find(item => item.id === parseInt(id));
     const [isVoted, setIsVoted] = useState(false);
-    const [votes, setVotes] = useState(drink.votes);
+    const [votes, setVotes] = useState(drink?.votes || 0);
+
+    console.log(drinks);
+    console.log(drink.id);
   
     const handleClick = () => {
       if (isVoted) {
@@ -29,7 +33,7 @@ export const Drink = () => {
      
     return (
       <div>
-        <div className="item-image-container">
+        {/* <div className="item-image-container">
           <img src={drink.imgUrl} alt={drink.title} />
           <div className="back-and-like">
             <BackArrow />
@@ -89,7 +93,7 @@ export const Drink = () => {
           </div>
           <Button type="submit" variant="primary">Add to Cart</Button>
         </div>
-        </div>
+        </div> */}
       </div>
     );
 }

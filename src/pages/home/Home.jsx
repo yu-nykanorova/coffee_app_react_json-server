@@ -1,8 +1,8 @@
-import "./Home.scss"
-import { BeansList } from "./components/BeansList/BeansList"
-import { DrinksList } from "./components/DrinksList/DrinksList"
-import { DrinksTitlesList } from "./components/DrinksTitlesList/DrinksTitlesList"
-import { Search } from "./components/Search/Search"
+import { BeansList } from "./components/BeansList/BeansList";
+import { DrinksList } from "./components/DrinksList/DrinksList";
+import { DrinksTitlesList } from "./components/DrinksTitlesList/DrinksTitlesList";
+import { Search } from "./components/Search/Search";
+import "./Home.scss";
 
 export const Home = () => {
   return (
