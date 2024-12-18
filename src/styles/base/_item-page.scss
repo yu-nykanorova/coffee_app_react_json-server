@@ -1,0 +1,47 @@
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 12rem;
+    background: linear-gradient(136.61deg, #21262E 4.28%, #0C0F14 93.52%);
+    border: 1px solid #21262E;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 33rem;
+    height: 33rem;
+
+    .icon-chevron-left::before, .icon-heart::before {
+        color: var(--c-text-grey);
+        font-size: 15rem;
+    }
+
+    &.liked .icon-heart::before {
+        color: #DC3535;
+    }
+}
+
+.item-title-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 25rem 25rem 0 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15rem 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-desc {
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 167%;
+    color: var(--c-white);
+}
+
+.size-container {
+    padding: 10rem 22rem;
+    border-radius: 10rem;
+    background: var(--c-bg-second);
+    cursor: pointer;
+}

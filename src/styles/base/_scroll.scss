@@ -1,0 +1,24 @@
+// ===== SCROLL CUSTOMIZE =====
+.main::-webkit-scrollbar {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--c-bg-second);
+  }
+.main::-webkit-scrollbar-thumb {
+    border-radius: 3rem;
+    background: var(--c-bg-btn);
+  }
+
+.drinks-list::-webkit-scrollbar,
+.coffee-drinks::-webkit-scrollbar,
+.coffee-beans-list::-webkit-scrollbar {
+  height: 3rem;
+  background-color: var(--c-bg-main);
+}
+
+.drinks-list::-webkit-scrollbar-thumb,
+.coffee-drinks::-webkit-scrollbar-thumb,
+.coffee-beans-list::-webkit-scrollbar {
+  border-radius: 1rem;
+  background: var(--c-bg-main);
+}

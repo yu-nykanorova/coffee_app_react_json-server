@@ -1,0 +1,44 @@
+.drinks-list {
+    min-height: 34rem;
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    gap: 19rem;
+    margin-bottom: 22rem;
+    margin-left: 30rem;
+    
+    &__item {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 7rem;
+            position: absolute;
+            bottom: 3rem;
+            left: calc(50% - 4rem);
+            transition: .2s all ease-in-out;
+            background: var(--c-bg-btn);
+            transform: scale(0);
+        }
+
+        &.selected::before {
+            transform: scale(1);
+        }
+
+        &.selected .drinks-list__item-name {
+            color: var(--c-bg-btn);
+        }
+    }
+
+    &__item-name {
+        font-weight: 600;
+        font-size: 14rem;
+        line-height: 143%;
+        color: var(--c-text-grey);
+        cursor: pointer;
+    }
+}

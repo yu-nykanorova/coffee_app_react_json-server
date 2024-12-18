@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30rem;
+
+    .menu,
+    .user {
+        cursor: pointer;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 10rem;
+        border: 1px solid #21262E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .icon-menu {
+        font-size: 14rem;
+  
+        &::before {
+            color: rgba(255, 255, 255, 0.18);
+      }
+    }
+  }
+  
+  
+  
+  

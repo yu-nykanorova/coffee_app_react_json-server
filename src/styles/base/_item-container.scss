@@ -1,0 +1,15 @@
+.item-container {
+    display: inline-block;
+    margin-right: 22rem;
+    max-width: 149rem;
+    padding: 12rem 11rem 20rem;
+    background: linear-gradient(158.84deg, #262B33 4%, rgba(38, 43, 51, 0) 91.93%);
+    border-radius: 23rem;
+}
+
+.item-title {
+    font-weight: 400;
+    font-size: 13rem;
+    line-height: 154%;
+    color: var(--c-white);
+}
