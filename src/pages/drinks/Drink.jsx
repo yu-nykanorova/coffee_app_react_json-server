@@ -7,29 +7,24 @@ import { useFetch } from "../../hooks/useFetch";
 import "./DrinkPage.scss";
 
 export const Drink = () => {
-    const { data: drinks, loading, error } = useFetch("drinks");
+    const { data, loading, error } = useFetch("drinks");
     const { id } = useParams();
-    const drink = drinks?.find(item => item.id === parseInt(id));
-    const [isVoted, setIsVoted] = useState(false);
-    const [votes, setVotes] = useState(drink?.votes || 0);
 
-    console.log(drinks);
-    console.log(drink.id);
+    if (loading) {
+      return <p>Loading drink...</p>;
+    }
   
-    const handleClick = () => {
-      if (isVoted) {
-        setIsVoted(false);
-        setVotes(votes - 1);
-      } else {
-        setIsVoted(true);
-        setVotes(votes + 1);
-      }
+    if (error) {
+      return <p>Error: {error}</p>;
     }
 
-    const starClass = isVoted ? "icon-star voted" : "icon-star";
-    const ratingClass = isVoted ? "rating voted" : "rating";
+    const drink = data?.find(item => item.id === parseInt(id));
 
-    if (!drinks) return <h1>Drink not found!</h1>;
+    console.log(id);
+    console.log(data);
+    //console.log(drink.id);
+
+    if (!data) return <h1>Drink not found!</h1>;
      
     return (
       <div>
@@ -44,9 +39,9 @@ export const Drink = () => {
               <h3 className="item-title__name">{ drink.title }</h3>
               <p className="item-title__region">{ drink.comment }</p>
               <div className="item-title__rating">
-                <span className={starClass} onClick={handleClick}></span>
-                <p className={ratingClass}>{ drink.rating }</p>
-                <p className="votes">({ votes })</p>
+                <span className="icon-star"></span>
+                <p className="rating">{ drink.rating }</p>
+                <p className="votes">{ drink.votes }</p>
               </div>
             </div>
             <div className="item-title__markers">
@@ -70,7 +65,6 @@ export const Drink = () => {
             </div>
           </div>
         </div>
-
         <div className="item-info-container">
           <p className="desc">Description</p>
           <p className="item-desc item-info-desc">{ drink.desc }</p>
