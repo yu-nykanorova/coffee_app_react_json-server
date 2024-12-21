@@ -8,16 +8,6 @@
     width: 100%;
 }
 
-.back-and-like {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 60rem 21rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
 .item-image-container {
     position: relative;
     width: 100%;
@@ -40,7 +30,7 @@
         color: var(--c-white);
         margin-bottom: 3rem;
      }
-	&__region {
+	&__comment {
         font-weight: 400;
         font-size: 12rem;
         line-height: 167%;
@@ -83,8 +73,6 @@
      }
 }
 
-
-
 .markers {
     display: flex;
     align-items: center;
@@ -93,34 +81,52 @@
     gap: 20rem;
  }
 
-.marker-bean, .marker-water { 
+.marker { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 56rem;
+    height: 56rem;
     border-radius: 10rem;
-    padding: 6rem 9rem;
+    padding: 9rem;
     background: var(--c-bg-second);
     p {
         font-weight: 500;
         font-size: 10rem;
-        line-height: 200%;
+        line-height: 100%;
         color: var(--c-text-grey-light);
     }
 }
 
-.icon-coffee_2::before, .icon-water::before {
-    font-size: 20rem;
+.marker.marker_coffee_2 {
+    padding-top: 0;
+}
+
+.icon-coffee::before, .icon-coffee_2::before, .icon-water::before, .icon-location::before {
     color: var( --c-bg-btn);
- }
+}
+.icon-coffee::before {
+    font-size: 24rem;
+}
+.icon-coffee_2::before {
+    font-size: 38rem;
+}
+.icon-water::before {
+    font-size: 22rem;
+}
+.icon-location::before {
+    font-size: 20rem;
+}
 
 .roast { 
+    align-self: stretch;
     margin-top: 13rem;
     padding: 12rem 23rem;
     font-weight: 500;
     font-size: 10rem;
     line-height: 200%;
+    text-align: center;
     color: var(--c-text-grey-light);
     border-radius: 10rem;
     background: var(--c-bg-second);

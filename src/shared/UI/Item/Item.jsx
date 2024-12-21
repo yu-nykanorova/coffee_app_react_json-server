@@ -1,0 +1,60 @@
+import { useParams } from "react-router-dom"
+import { useFetch } from "../../../hooks/useFetch";
+import { BackArrow } from "../BackArrow/BackArrow";
+import { LikeHeart } from "../LikeHeart/LikeHeart";
+import { Button } from "../Button/Button";
+import { ItemMarker } from "../ItemMarker/ItemMarker";
+import { ItemSize } from "../ItemSize/ItemSize";
+import "./Item.scss";
+
+export const Item = ({ itemName }) => {
+    const { id } = useParams();
+    const { data: item, loading, error } = useFetch(`${itemName}/${id}`);
+
+    if (loading) return <p>Loading item data...</p>;
+  
+    if (error) return <p>Error: {error}</p>;
+
+    if (!item) return <h1>Selected item not found!</h1>;
+
+    return (
+      <div>
+        <div className="item-image-container">
+          <img src={ item.imgUrl } alt={ item.title } />
+          <div className="back-and-like">
+            <BackArrow />
+            <LikeHeart />
+          </div>
+          <div className="item-title-bg item-title">
+            <div className="item-title__info">
+              <h3 className="item-title__name">{ item.title }</h3>
+              <p className="item-title__comment">{ item.comment }</p>
+              <div className="item-title__rating">
+                <span className="icon-star"></span>
+                <p className="rating">{ item.rating }</p>
+                <p className="votes">({ item.votes })</p>
+              </div>
+            </div>
+            <div className="item-title__markers">
+              <ItemMarker itemName={itemName} milk={item.milk} region={item.region}/>
+              <div className="roast">{ item.roast }</div>
+            </div>
+          </div>
+        </div>
+        <div className="item-info-container">
+          <p className="desc">Description</p>
+          <p className="item-desc item-info-desc">{ item.desc }</p>
+          <p className="desc">Size</p>
+          <ItemSize itemName={itemName}/>  
+        <div className="item-info-buy">
+          <div className="price">
+            <p className="price-title">Price</p>
+            <p className="price-value"><span>$ </span>4.50</p>
+          </div>
+          <Button type="submit" variant="primary">Add to Cart</Button>
+        </div>
+        </div>
+      </div>
+    );
+}
+

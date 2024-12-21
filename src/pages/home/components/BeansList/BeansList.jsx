@@ -21,17 +21,19 @@ export const BeansList = () => {
       <div className="coffee-beans-list">
         {beans.map(bean => (
           <div key={bean.id}>
-            <Link to={`/beans/${bean.id}`} className="item-container coffee-beans-list__item">
-              <div className="coffee-beans-list__img"> 
+            <div className="item-container coffee-beans-list__item">
+              <Link to={`/beans/${bean.id}`} className="coffee-beans-list__img"> 
                   <img src={bean.imgUrl} alt={bean.title} />
-              </div>
-              <h3 className="item-title coffee-beans-list__title">{bean.title}</h3>
+              </Link>
+              <Link to={`/beans/${bean.id}`}>
+                <h3 className="item-title coffee-beans-list__title">{bean.title}</h3>
+              </Link>
               <p className="coffee-beans-list__roast">{bean.roast}</p>
               <div className="coffee-beans-list__bye-info">
                 <p className="price-value"><span>$ </span>{bean.price}</p>
                 <ButtonAdd />
               </div>
-            </Link>
+            </div>
           </div>
         ))}
       </div>

@@ -20,7 +20,11 @@ export const DrinksTitlesList = () => {
   return (
   <div className="drinks-list">
       {drinks.map(drink => (
-        <div className={`drinks-list__item ${drink.id === isSelected ? "selected" : ''}`} onClick={() => toggleSelect(drink.id)} key={drink.id}>
+        <div
+          key={drink.id}
+          onClick={() => toggleSelect(drink.id)}
+          className={`drinks-list__item ${drink.id === isSelected ? "selected" : ''}`}
+        >
           <div className="drinks-list__item-name">{drink.title}</div>
         </div>
       ))}      

@@ -1,13 +1,10 @@
+import { NavLink } from "react-router-dom"
 
 export const BackArrow = () => {
 
-    const goBack = () => {
-        window.history.back();
-    }
-
     return (
-        <div className="icon-container" onClick={goBack}>
-                <span className="icon-chevron-left"></span>
-        </div>
+        <NavLink to="/" className="icon-container">
+            <span className="icon-chevron-left"></span>
+        </NavLink>
     )
 }

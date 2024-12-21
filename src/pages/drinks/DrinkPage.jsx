@@ -1,9 +1,9 @@
-import { Drink } from "./Drink";
+import { Item } from "../../shared/UI/Item/Item";
 
 export const DrinkPage = () => {
   
   return (
-    <Drink/>
+    <Item itemName={"drinks"}/>
   )
 }
 

@@ -7,6 +7,7 @@
             "price": 10.50,
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
+            "comment": "From Africa",
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/robusta_beans_1.jpg"
@@ -18,6 +19,7 @@
             "price": 10.50,
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
+            "comment": "From Africa",
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/arabica_beans_1.jpg"
@@ -29,6 +31,7 @@
             "price": 10.50,
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
+            "comment": "From Africa",
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/robusta_beans_2.jpg"
@@ -40,6 +43,7 @@
             "price": 10.50,
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
+            "comment": "From Africa",
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/arabica_beans_2.jpg"
