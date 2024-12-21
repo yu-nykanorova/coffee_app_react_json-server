@@ -1,20 +1,19 @@
 import { useParams } from "react-router-dom"
-import { useState } from "react";
-import "./BeanPage.scss";
 import { BackArrow } from "../../shared/UI/BackArrow/BackArrow";
 import { LikeHeart } from "../../shared/UI/LikeHeart/LikeHeart";
 import { Button } from "../../shared/UI/Button/Button";
+import { useFetch } from "../../hooks/useFetch";
+import "./BeanPage.scss";
 
 export const Bean = () => {
     const { id } = useParams();
-    const bean = beans.find(item => item.id === parseInt(id));
-    const [isVoted, setIsVoted] = useState(false);
+    const { data: bean, loading, error } = useFetch(`beans/${id}`);
 
-    const toggleVote = () => {
-      setIsVoted(!isVoted); 
-    };
+    if (loading) return <p>Loading drink...</p>;
+  
+    if (error) return <p>Error: {error}</p>;
 
-    if (!beans) return <h1>Bean not found!</h1>;
+    if (!bean) return <h1>Drink not found!</h1>;
     
     return (
       <div>
@@ -29,7 +28,7 @@ export const Bean = () => {
               <h3 className="item-title__name">{ bean.title }</h3>
               <p className="item-title__region">From { bean.region }</p>
               <div className="item-title__rating">
-                <span className={`icon-star ${isVoted ? "voted" : ''}`} onClick={toggleVote}></span>
+                <span className="icon-star"></span>
                 <p className="rating">{ bean.rating }</p>
                 <p className="votes">({ bean.votes })</p>
               </div>

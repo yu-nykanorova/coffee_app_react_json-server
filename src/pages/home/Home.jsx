@@ -11,7 +11,7 @@ export const Home = () => {
       <Search />
       <DrinksTitlesList />
       <DrinksList />
-      {/* <BeansList /> */}
+      <BeansList />
     </div>
   )
 }

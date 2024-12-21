@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import { useState } from "react";
 import { BackArrow } from "../../shared/UI/BackArrow/BackArrow";
 import { LikeHeart } from "../../shared/UI/LikeHeart/LikeHeart";
 import { Button } from "../../shared/UI/Button/Button";
@@ -7,28 +6,21 @@ import { useFetch } from "../../hooks/useFetch";
 import "./DrinkPage.scss";
 
 export const Drink = () => {
-    const { data, loading, error } = useFetch("drinks");
     const { id } = useParams();
+    const { data: drink, loading, error } = useFetch(`drinks/${id}`);
 
-    if (loading) {
-      return <p>Loading drink...</p>;
-    }
+    if (loading) return <p>Loading drink...</p>;
   
-    if (error) {
-      return <p>Error: {error}</p>;
-    }
+    if (error) return <p>Error: {error}</p>;
 
-    const drink = data?.find(item => item.id === parseInt(id));
+    if (!drink) return <h1>Drink not found!</h1>;
 
-    console.log(id);
-    console.log(data);
-    //console.log(drink.id);
-
-    if (!data) return <h1>Drink not found!</h1>;
+    console.log(drink.id);
+    console.log(drink.title);
      
     return (
       <div>
-        {/* <div className="item-image-container">
+        <div className="item-image-container">
           <img src={drink.imgUrl} alt={drink.title} />
           <div className="back-and-like">
             <BackArrow />
@@ -87,7 +79,7 @@ export const Drink = () => {
           </div>
           <Button type="submit" variant="primary">Add to Cart</Button>
         </div>
-        </div> */}
+        </div>
       </div>
     );
 }

@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
-//import { useFetch } from "../../../../hooks/useFetch";
+import { useFetch } from "../../../../hooks/useFetch";
 
 import "./DrinksList.scss";
 
 export const DrinksList = () => {
-  // const { data: drinks, loading, error } = useFetch("drinks");
-
-  const { fetchData } = GetDataService();
+  const { data: drinks, loading, error } = useFetch("drinks");
 
   if (loading) {
     return <p>Loading drinks list...</p>;

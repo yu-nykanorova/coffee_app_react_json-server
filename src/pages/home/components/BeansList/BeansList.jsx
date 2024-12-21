@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
 import { useFetch } from "../../../../hooks/useFetch";
+
 import "./BeansList.scss";
 
 export const BeansList = () => {

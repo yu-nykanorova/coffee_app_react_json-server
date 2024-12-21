@@ -4,7 +4,7 @@ const GetDataService = () => {
         try {
           const response = await fetch(`http://localhost:3000/${itemsName}`);
           if(!response.ok) {
-            throw new Error(`Failed to fetch ${itemsName} list`);
+            throw new Error(`Failed to fetch ${itemsName} data`);
           }
           const data = await response.json();
           return data;

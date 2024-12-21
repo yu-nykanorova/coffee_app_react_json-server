@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import GetDataService from "../services/GetDataService";
 
 export const useFetch = (itemsName) => {
@@ -7,10 +7,12 @@ export const useFetch = (itemsName) => {
     const [error, setError] = useState(null);
     const { fetchData } = GetDataService();
 
+    const memoizedFetchData = useCallback(() => fetchData(itemsName), [itemsName]);
+
     useEffect(() => {
         const loadData = async () => {
             try {
-                const result = await fetchData(itemsName);
+                const result = await memoizedFetchData(itemsName);
                 setData(result);
             } catch (error) {
                 setError(error.message);
