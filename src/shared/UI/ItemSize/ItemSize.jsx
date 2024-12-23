@@ -1,7 +1,7 @@
 
-export const ItemSize = ({ itemName, className }) => {
+export const ItemSize = ({ itemsName, className }) => {
     const renderItemSize = () => {
-        switch(itemName) {
+        switch(itemsName) {
             case "drinks":
                 return (
                     <div className="item-size-list">

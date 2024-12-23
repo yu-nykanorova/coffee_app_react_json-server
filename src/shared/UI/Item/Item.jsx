@@ -7,9 +7,9 @@ import { ItemMarker } from "../ItemMarker/ItemMarker";
 import { ItemSize } from "../ItemSize/ItemSize";
 import "./Item.scss";
 
-export const Item = ({ itemName }) => {
+export const Item = ({ itemsName }) => {
     const { id } = useParams();
-    const { data: item, loading, error } = useFetch(`${itemName}/${id}`);
+    const { data: item, loading, error } = useFetch(`${itemsName}/${id}`);
 
     if (loading) return <p>Loading item data...</p>;
   
@@ -36,7 +36,7 @@ export const Item = ({ itemName }) => {
               </div>
             </div>
             <div className="item-title__markers">
-              <ItemMarker itemName={itemName} milk={item.milk} region={item.region}/>
+              <ItemMarker itemsName={itemsName} milk={item.milk} region={item.region}/>
               <div className="roast">{ item.roast }</div>
             </div>
           </div>
@@ -45,11 +45,11 @@ export const Item = ({ itemName }) => {
           <p className="desc">Description</p>
           <p className="item-desc item-info-desc">{ item.desc }</p>
           <p className="desc">Size</p>
-          <ItemSize itemName={itemName}/>  
+          <ItemSize itemsName={itemsName}/>  
         <div className="item-info-buy">
           <div className="price">
             <p className="price-title">Price</p>
-            <p className="price-value"><span>$ </span>4.50</p>
+            <p className="price-value"><span>$ </span>{ Number(item.price).toFixed(2) }</p>
           </div>
           <Button type="submit" variant="primary">Add to Cart</Button>
         </div>

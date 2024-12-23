@@ -18,17 +18,20 @@ export const ItemsList = ({ itemsName }) => {
           <div className="item-container coffee-drinks__item">
             <Link to={`/${itemsName}/${item.id}`} className="coffee-drinks__img">
               <img src={ item.imgUrl } alt={ item.title } />
-              <div className="coffee-drinks__rating">
-                <span className="icon-star"></span>
-                <p className="rating_value">{ item.rating }</p>
-              </div>
+              {
+                itemsName === "drinks" && 
+                  <div className="coffee-drinks__rating">
+                    <span className="icon-star"></span>
+                    <p className="rating_value">{ item.rating }</p>
+                  </div>
+              }
             </Link>
             <Link to={`/drinks/${item.id}`}>
-              <h3 className="item-title coffee-drinks__title">{item.title}</h3>
+              <h3 className="item-title coffee-drinks__title">{ item.title }</h3>
             </Link>
-            <p className="coffee-drinks__desc">{item.comment}</p>
+            <p className="coffee-drinks__desc">{ item.comment }</p>
             <div className="coffee-drinks__bye-info">
-              <p className="price-value"><span>$ </span>{item.price}</p>
+              <p className="price-value"><span>$ </span>{ Number(item.price).toFixed(2) }</p>
               <ButtonAdd />
             </div>
             </div>

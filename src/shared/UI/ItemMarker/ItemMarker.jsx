@@ -1,8 +1,8 @@
 
-export const ItemMarker = ({ itemName, className, milk, region }) => {
+export const ItemMarker = ({ itemsName, className, milk, region }) => {
   
   const renderMarkerContent = () => {
-    switch(itemName) {
+    switch(itemsName) {
         case "drinks":
             return (
                 <div className="markers">

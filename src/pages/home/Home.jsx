@@ -1,4 +1,3 @@
-import { BeansList } from "./components/BeansList/BeansList";
 import { ItemsList } from "./components/ItemsList/ItemsList";
 import { DrinksTitlesList } from "./components/DrinksTitlesList/DrinksTitlesList";
 import { Search } from "./components/Search/Search";
@@ -10,8 +9,8 @@ export const Home = () => {
       <h1 className="p30 main-title">Find the best coffee for you</h1>
       <Search />
       <DrinksTitlesList />
-      <ItemsList itemName={"drinks"}/>
-      <BeansList />
+      <ItemsList itemsName={"drinks"}/>
+      <ItemsList itemsName={"beans"}/>
     </div>
   )
 }
