@@ -4,16 +4,20 @@ import { useFetch } from "../../../../hooks/useFetch";
 
 import "./ItemsList.scss";
 
-export const ItemsList = ({ itemsName }) => {
+export const ItemsList = ({ itemsName, selectedCategory }) => {
   const { data: items, loading, error } = useFetch(itemsName);
 
   if (loading) return <p>Loading items list...</p>;
   
   if (error) return <p>Error: {error}</p>;
 
+  const filteredItems = selectedCategory ?
+    items.filter(item => item.category.includes(selectedCategory))
+    : items;
+
   return (
     <div className="coffee-drinks">
-      {items.map(item => (
+      {filteredItems.map(item => (
         <div key={item.id}>
           <div className="item-container coffee-drinks__item">
             <Link to={`/${itemsName}/${item.id}`} className="coffee-drinks__img">
@@ -31,7 +35,10 @@ export const ItemsList = ({ itemsName }) => {
             </Link>
             <p className="coffee-drinks__desc">{ item.comment }</p>
             <div className="coffee-drinks__bye-info">
-              <p className="price-value"><span>$ </span>{ Number(item.price).toFixed(2) }</p>
+              <p className="price-value">
+                <span>$ </span>
+                { Number(item.price).toFixed(2) }
+              </p>
               <ButtonAdd />
             </div>
             </div>

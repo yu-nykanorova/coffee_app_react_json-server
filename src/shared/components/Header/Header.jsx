@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom'
-import '/src/shared/components/Header/Header.scss';
-import { useState } from 'react';
-import { HeaderMenu } from './components/HeaderMenu/HeaderMenu';
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { HeaderMenu } from "./components/HeaderMenu/HeaderMenu";
+import "/src/shared/components/Header/Header.scss";
 
 export const Header = () => {
   const [navIsActive, setNavIsActive] = useState(false);
