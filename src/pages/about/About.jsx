@@ -1,6 +1,9 @@
 export const About = () => {
   return (
-    <h1>About</h1>
+    <div className="dev-info">
+      <h3>About page</h3>
+      Sorry, this page is under construction
+    </div>
   )
 }
 

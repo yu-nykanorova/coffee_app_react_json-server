@@ -2,10 +2,11 @@ import { useParams } from "react-router-dom"
 import { useFetch } from "../../../hooks/useFetch";
 import { BackArrow } from "../BackArrow/BackArrow";
 import { LikeHeart } from "../LikeHeart/LikeHeart";
-import { Button } from "../Button/Button";
+import { ButtonMain } from "../Buttons/ButtonMain";
 import { ItemMarker } from "../ItemMarker/ItemMarker";
 import { ItemSize } from "../ItemSize/ItemSize";
 import "./Item.scss";
+import { ItemPrice } from "../ItemPrice/ItemPrice";
 
 export const Item = ({ itemsName }) => {
     const { id } = useParams();
@@ -47,11 +48,11 @@ export const Item = ({ itemsName }) => {
           <p className="desc">Size</p>
           <ItemSize itemsName={itemsName}/>  
         <div className="item-info-buy">
-          <div className="price">
-            <p className="price-title">Price</p>
-            <p className="price-value"><span>$ </span>{ Number(item.price).toFixed(2) }</p>
+          <div className="item-price">
+            <p className="item-price-title">Price</p>
+            <ItemPrice className="price-value-large" priceValue={item.price} />
           </div>
-          <Button type="submit" variant="primary">Add to Cart</Button>
+          <ButtonMain type="submit" variant="primary">Add to Cart</ButtonMain>
         </div>
         </div>
       </div>

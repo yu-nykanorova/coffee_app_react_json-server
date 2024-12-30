@@ -1,0 +1,15 @@
+.price-value {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15rem;
+    line-height: 133%;
+    color: var(--c-white);
+
+    span {
+        color: var(--c-bg-btn);
+    }
+}
+
+.price-value-large {
+    font-size: 20rem;
+}

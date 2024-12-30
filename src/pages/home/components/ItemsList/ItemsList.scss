@@ -1,71 +1,59 @@
-.coffee-drinks {
+.items-list {
     overflow: auto;
     white-space: nowrap;
     margin-left: 30rem;
     padding: 0 0 10rem 0; 
     display: flex;
-    
-    &__img { 
-        display: flex;
-        position: relative;
-        margin-bottom: 10rem;
-        width: 126rem;
-        height: 126rem;
-        img {
-            border-radius: 16rem;
-        }
-    }
 
-    &__rating {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 5rem;
-        padding: 1rem 11rem 2rem;
-        border-radius: 0 16rem 0 26rem;
-        background: rgba(0, 0, 0, 0.6);
-        position: absolute;
-        top: 0;
-        right: 0;
-        .icon-star::before {
-            color: var(--c-bg-btn);
-            font-size: 10rem;
-            line-height: 200%;
-        }
-
-        .rating_value {
-            font-weight: 600;
-            font-size: 10rem;
-            line-height: 200%;
-            color: var(--c-white);
-        }
-    }
-
-    &__desc {
-        font-weight: 400;
-        font-size: 9rem;
-        line-height: 222%;
-        color: var(--c-white);
-        margin-bottom: 3rem;
-    }
-
-    &__bye-info { 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .price-value {
-            font-weight: 600;
-            font-size: 15rem;
-            line-height: 133%;
-            color: var(--c-white);
-            span {
-                color: var(--c-bg-btn);
+    &__item {
+        &-img { 
+            display: flex;
+            position: relative;
+            margin-bottom: 10rem;
+            width: 126rem;
+            height: 126rem;
+            img {
+                border-radius: 16rem;
             }
         }
-        
-        .icon-plus {
-            font-size: 10rem;
+
+        &-rating {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 5rem;
+            padding: 1rem 11rem 2rem;
+            border-radius: 0 16rem 0 26rem;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            right: 0;
+            .icon-star::before {
+                color: var(--c-bg-btn);
+                font-size: 10rem;
+                line-height: 200%;
+            }
+    
+            .rating_value {
+                font-weight: 600;
+                font-size: 10rem;
+                line-height: 200%;
+                color: var(--c-white);
+            }
+        }
+
+        &-desc {
+            font-weight: 400;
+            font-size: 9rem;
+            line-height: 222%;
+            color: var(--c-white);
+            margin-bottom: 3rem;
+        }
+
+        &-bye-info { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 }

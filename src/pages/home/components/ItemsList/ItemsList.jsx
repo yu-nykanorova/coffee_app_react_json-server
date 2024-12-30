@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { ButtonAdd } from "../../../../shared/UI/ButtonAdd/ButtonAdd";
+import { ButtonAddRemove } from "../../../../shared/UI/Buttons/ButtonAddRemove";
 import { useFetch } from "../../../../hooks/useFetch";
 
 import "./ItemsList.scss";
+import { ItemPrice } from "../../../../shared/UI/ItemPrice/ItemPrice";
 
 export const ItemsList = ({ itemsName, selectedCategory }) => {
   const { data: items, loading, error } = useFetch(itemsName);
@@ -16,30 +17,27 @@ export const ItemsList = ({ itemsName, selectedCategory }) => {
     : items;
 
   return (
-    <div className="coffee-drinks">
+    <div className="items-list">
       {filteredItems.map(item => (
         <div key={item.id}>
-          <div className="item-container coffee-drinks__item">
-            <Link to={`/${itemsName}/${item.id}`} className="coffee-drinks__img">
+          <div className="item-container items-list__item">
+            <Link to={`/${itemsName}/${item.id}`} className="items-list__item-img">
               <img src={ item.imgUrl } alt={ item.title } />
               {
                 itemsName === "drinks" && 
-                  <div className="coffee-drinks__rating">
+                  <div className="items-list__item-rating">
                     <span className="icon-star"></span>
                     <p className="rating_value">{ item.rating }</p>
                   </div>
               }
             </Link>
-            <Link to={`/drinks/${item.id}`}>
-              <h3 className="item-title coffee-drinks__title">{ item.title }</h3>
+            <Link to={`/${itemsName}/${item.id}`}>
+              <h3 className="item-title">{ item.title }</h3>
             </Link>
-            <p className="coffee-drinks__desc">{ item.comment }</p>
-            <div className="coffee-drinks__bye-info">
-              <p className="price-value">
-                <span>$ </span>
-                { Number(item.price).toFixed(2) }
-              </p>
-              <ButtonAdd />
+            <p className="items-list__item-desc">{ item.comment }</p>
+            <div className="items-list__item-bye-info">
+              <ItemPrice priceValue={item.price} />
+              <ButtonAddRemove form="plus" />
             </div>
             </div>
         </div>

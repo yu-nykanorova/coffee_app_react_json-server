@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { LockIcon } from "../../shared/Icons/LockIcon";
 import { UserIcon } from "../../shared/Icons/UserIcon";
-import { Button } from "../../shared/UI/Button/Button";
+import { ButtonMain } from "../../shared/UI/Buttons/ButtonMain";
 import { Input } from "../../shared/UI/Input/Input";
 import { Link } from "react-router-dom";
 import "./Login.scss";
@@ -30,7 +30,7 @@ export const Login = () => {
           icon={<LockIcon/>}
         />
         <Link to="/">
-          <Button
+          <ButtonMain
             className="login__btn"
             type="submit"
             variant="primary"

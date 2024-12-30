@@ -1,45 +1,38 @@
+import { useState } from "react";
+
 
 export const ItemSize = ({ itemsName, className }) => {
-    const renderItemSize = () => {
-        switch(itemsName) {
-            case "drinks":
-                return (
-                    <div className="item-size-list">
-                        <div className="size-container item-size selected">
-                            <p className="size">S</p>
-                        </div>
-                        <div className="size-container item-size">
-                            <p className="size">M</p>
-                        </div>
-                        <div className="size-container item-size">
-                            <p className="size">L</p>
-                        </div>
-                    </div>
-                );
-            case "beans":
-              return (
-                <div className="item-size-list">
-                    <div className="size-container item-size selected">
-                        <p className="size">250g</p>
-                    </div>
-                    <div className="size-container item-size">
-                        <p className="size">500g</p>
-                    </div>
-                    <div className="size-container item-size">
-                        <p className="size">1000g</p>
-                    </div>
-                </div>
-            );
-            default:
-                return (
-                    <div className="item-size-list">
-                        <p>No sizes</p>
-                    </div>
-                );
-        }
+    
+    const [selectedSize, setSelectedSize] = useState(0);
+
+    const sizes = {
+        drinks: ["S", "M", "L"],
+        beans: ["250g", "500g", "1000g"],
+    };
+
+    const currentSizes = sizes[itemsName] || [];
+
+    const handleSizeClick = (index) => {
+        setSelectedSize(index);
     }
       
     return (
-        <div className={className}>{renderItemSize()}</div>
-    )
+        <div className={`${className} item-size-list`}>
+            {currentSizes.length > 0 ? (
+                currentSizes.map((size, index) => (
+                    <div
+                        key={index}    
+                        className={`size-container item-size ${
+                            index === selectedSize ? "selected" : ""
+                        }`}
+                        onClick={() => handleSizeClick(index)}
+                    >
+                        <p className="size">{ size }</p>
+                    </div>
+                ))
+            ) : (
+                <p>No sizes</p>
+            )}
+        </div>
+    );
 }

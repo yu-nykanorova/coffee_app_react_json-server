@@ -1,7 +1,10 @@
 
 export const Notification = () => {
   return (
-    <h1>Notification</h1>
+    <div className="dev-info">
+      <h3>Notification page</h3>
+      Sorry, this page is under construction
+    </div>
   )
 }
 

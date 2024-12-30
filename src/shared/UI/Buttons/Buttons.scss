@@ -1,0 +1,23 @@
+.btn-main {
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 125%;
+    padding: 20rem 73rem;
+    color: var(--c-white);
+    border-radius: 20rem;
+}
+
+.btn-add-remove { 
+    border-radius: 7rem;
+    width: 29rem;
+    height: 29rem;
+    padding: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon-plus, .icon-minus {
+        font-size: 9rem;
+        line-height: normal;
+    }
+}

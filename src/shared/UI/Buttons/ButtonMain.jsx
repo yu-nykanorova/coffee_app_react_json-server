@@ -1,6 +1,6 @@
-import "./Button.scss";
+import "./Buttons.scss";
 
-export const Button = ({className, variant, label, children, ...props}) => {
+export const ButtonMain = ({className, variant, label, children, ...props}) => {
 
     const renderClass = () => {
         switch (variant) {

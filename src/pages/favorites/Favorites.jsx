@@ -1,6 +1,9 @@
 
 export const Favorites = () => {
   return (
-    <h1>Favorites</h1>
+    <div className="dev-info">
+      <h3>Favorites page</h3>
+      Sorry, this page is under construction
+    </div>
   )
 }
