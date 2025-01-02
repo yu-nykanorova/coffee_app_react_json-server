@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { ButtonAddRemove } from "../../../../shared/UI/Buttons/ButtonAddRemove";
 import { useFetch } from "../../../../hooks/useFetch";
-
-import "./ItemsList.scss";
 import { ItemPrice } from "../../../../shared/UI/ItemPrice/ItemPrice";
+import "./ItemsList.scss";
 
 export const ItemsList = ({ itemsName, selectedCategory }) => {
   const { data: items, loading, error } = useFetch(itemsName);
@@ -35,8 +34,14 @@ export const ItemsList = ({ itemsName, selectedCategory }) => {
               <h3 className="item-title">{ item.title }</h3>
             </Link>
             <p className="items-list__item-desc">{ item.comment }</p>
-            <div className="items-list__item-bye-info">
-              <ItemPrice priceValue={item.price} />
+            <div className="items-list__item-buy-info">
+              <ItemPrice
+                priceValue={
+                  itemsName === "drinks" ?
+                  item.price["S"] :
+                  item.price["250g"]
+                }
+              />
               <ButtonAddRemove form="plus" />
             </div>
             </div>

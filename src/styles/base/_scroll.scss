@@ -5,7 +5,8 @@
   }
 .main::-webkit-scrollbar-thumb {
     border-radius: 3rem;
-    background: var(--c-bg-btn);
+    background: transparent;
+    border: 1rem solid var(--c-text-grey);
   }
 
 .drinks-list::-webkit-scrollbar,

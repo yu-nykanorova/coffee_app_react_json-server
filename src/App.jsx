@@ -2,7 +2,8 @@ import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
-  Outlet
+  Outlet,
+  useLocation
 } from "react-router-dom";
 import { Home } from "./pages/home/Home.jsx";
 import { About } from "./pages/about/About.jsx";
@@ -15,6 +16,7 @@ import { DrinkPage } from "./pages/drinks/DrinkPage.jsx";
 import { BeanPage } from "./pages/beans/BeanPage.jsx";
 import { Header } from "./shared/components/Header/Header.jsx";
 import { Sidebar } from "./shared/components/Sidebar/Sidebar.jsx";
+import GetPageTitle from "./services/GetPageTitle.js";
 
 const App = () => {
 
@@ -66,9 +68,13 @@ const App = () => {
 };
 
 const MainLayout = () => {
+  const { getPageTitle } = GetPageTitle();
+  const location = useLocation();
+  const pageTitle = getPageTitle(location.pathname);
+
   return (
     <>
-      <Header />
+      <Header title={ pageTitle } />
       <div className="main">
           <Outlet />
       </div>

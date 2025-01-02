@@ -1,0 +1,27 @@
+.multi-item-card {
+
+    &__main-info {}
+
+    &__image {
+
+        img {}
+    }
+
+    &__info {
+
+        &-title {}
+
+        &-desc {}
+
+        &-roast {}
+    }
+
+    &__buy-info {
+
+        &-size {}
+
+        &-price {}
+
+        &-amount {}
+    }
+}

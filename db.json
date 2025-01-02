@@ -4,7 +4,11 @@
             "id": 1,
             "title": "Robusta Beans",
             "roast": "Medium Roasted",
-            "price": 10.50,
+            "price": {
+                "250g": 10.50,
+                "500g": 20.00,
+                "1000g": 38.00
+            },
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
             "comment": "From Africa",
@@ -16,7 +20,11 @@
             "id": 2,
             "title": "Arabica Beans",
             "roast": "Light Roast",
-            "price": 10.50,
+            "price": {
+                "250g": 10.50,
+                "500g": 20.00,
+                "1000g": 38.00
+            },
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
             "comment": "From Africa",
@@ -28,7 +36,11 @@
             "id": 3,
             "title": "Robusta Beans",
             "roast": "Medium Roasted",
-            "price": 10.50,
+            "price": {
+                "250g": 10.50,
+                "500g": 20.00,
+                "1000g": 38.00
+            },
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
             "comment": "From Africa",
@@ -40,7 +52,11 @@
             "id": 4,
             "title": "Arabica Beans",
             "roast": "Light Roast",
-            "price": 10.50,
+            "price": {
+                "250g": 10.50,
+                "500g": 20.00,
+                "1000g": 38.00
+            },
             "desc": "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed!",
             "region": "Africa",
             "comment": "From Africa",
@@ -57,7 +73,11 @@
             "roast": "Medium Roasted",
             "comment": "With Steamed Milk",
             "desc": "Cappuccino is a latte made with more foam than steamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
-            "price": 4.20,
+            "price": {
+                "S": 4.20,
+                "M": 5.20,
+                "L": 6.20
+            },
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/cappuccino_1.jpg",
@@ -70,7 +90,11 @@
             "roast": "Medium Roasted",
             "comment": "With Foam",
             "desc": "Cappuccino is a latte made with more foam than steamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
-            "price": 4.20,
+            "price": {
+                "S": 4.20,
+                "M": 5.20,
+                "L": 6.20
+            },
             "rating": 4.2,
             "votes": 6.879,
             "imgUrl": "/assets/img/cappuccino_2.jpg",
@@ -83,7 +107,11 @@
             "roast": "Medium Roasted",
             "comment": "Without Milk",
             "desc": "Americano is a diluted espresso made by adding hot water, resulting in a milder, smoother coffee.",
-            "price": 4.20,
+            "price": {
+                "S": 4.20,
+                "M": 5.20,
+                "L": 6.20
+            },
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/americano.jpg",
@@ -96,7 +124,11 @@
             "roast": "Medium Roasted",
             "comment": "Without Milk",
             "desc": "Espresso is a concentrated coffee brewed by forcing hot water through finely-ground beans, known for its rich and intense flavor.",
-            "price": 4.20,
+            "price": {
+                "S": 4.20,
+                "M": 5.20,
+                "L": 6.20
+            },
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/espresso.jpg",
@@ -109,7 +141,11 @@
             "roast": "Medium Roasted",
             "comment": "Foamed Milk",
             "desc": "Macchiato is an espresso-based drink topped with a small amount of foamed milk for a bold yet slightly creamy flavor.",
-            "price": 4.20,
+            "price": {
+                "S": 4.20,
+                "M": 5.20,
+                "L": 6.20
+            },
             "rating": 4.5,
             "votes": 6.879,
             "imgUrl": "/assets/img/macchiato.jpg",

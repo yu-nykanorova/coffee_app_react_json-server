@@ -1,10 +1,6 @@
-import { useState } from "react";
 
-
-export const ItemSize = ({ itemsName, className }) => {
+export const ItemSize = ({ itemsName, selectedSize, onSizeChange, className }) => {
     
-    const [selectedSize, setSelectedSize] = useState(0);
-
     const sizes = {
         drinks: ["S", "M", "L"],
         beans: ["250g", "500g", "1000g"],
@@ -12,20 +8,20 @@ export const ItemSize = ({ itemsName, className }) => {
 
     const currentSizes = sizes[itemsName] || [];
 
-    const handleSizeClick = (index) => {
-        setSelectedSize(index);
+    const handleSizeClick = (size) => {
+        onSizeChange(size);
     }
       
     return (
         <div className={`${className} item-size-list`}>
             {currentSizes.length > 0 ? (
-                currentSizes.map((size, index) => (
+                currentSizes.map(size => (
                     <div
-                        key={index}    
+                        key={size}    
                         className={`size-container item-size ${
-                            index === selectedSize ? "selected" : ""
+                            size === selectedSize ? "selected" : ""
                         }`}
-                        onClick={() => handleSizeClick(index)}
+                        onClick={() => handleSizeClick(size)}
                     >
                         <p className="size">{ size }</p>
                     </div>

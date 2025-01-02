@@ -2,8 +2,6 @@ import "./Buttons.scss";
 
 export const ButtonAddRemove = ({ form }) => {
 
-  console.log(form);
-
   const renderButtonContent = () => {
     switch(form) {
       case "plus":

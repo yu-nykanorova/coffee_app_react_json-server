@@ -1,0 +1,35 @@
+.cart-container {
+    padding: 0 20rem;
+
+    .cards-container{
+        padding: 0 10rem;
+    }
+
+    .payment-info {
+        max-width: 500rem;
+        width: 100%;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid red;
+    
+        .total-price {
+    
+            .price-title {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 167%;
+                color: var(--c-text-grey-light);
+                margin-bottom: 6rem;
+            }
+    
+            .price-amount {}
+        }
+    
+        .cart-pay-btn {
+            width: 240rem;
+        }
+    }
+}
+

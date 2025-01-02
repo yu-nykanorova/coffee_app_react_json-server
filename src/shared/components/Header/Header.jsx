@@ -3,12 +3,12 @@ import { useState } from "react";
 import { HeaderMenu } from "./components/HeaderMenu/HeaderMenu";
 import "/src/shared/components/Header/Header.scss";
 
-export const Header = () => {
+export const Header = ({ title }) => {
   const [navIsActive, setNavIsActive] = useState(false);
 
   const location = useLocation();
 
-  if (location.pathname.includes("/drink") || location.pathname.includes("/bean") || location.pathname.includes("/auth")) {
+  if (location.pathname.includes("/auth")) {
     return null;
   }
 
@@ -17,6 +17,7 @@ export const Header = () => {
       <div className="menu" onClick={()=> setNavIsActive(true)}>
         <span className="icon-menu"></span>
       </div>
+      <div className="page-title">{ title }</div>
       <div className="user">
         <Link to="/auth" className="user-link">
           <span className="icon-coffee"></span>
