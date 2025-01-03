@@ -9,20 +9,61 @@
 }
 
 .single-item-card {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    padding: 12rem 22rem 16rem 12rem;
 
     &__image {
+        border-radius: 16rem;
+        max-width: 126rem;
+        max-height: 126rem;
+        display: flex;
 
-        img {}
+        img {
+            border-radius: 16rem;
+            object-fit: cover;
+        }
     }
 
     &__info {
         
-        &-title {}
+        &-title {
+            font-weight: 400;
+            font-size: 15rem;
+            line-height: 133%;
+        }
 
-        &-desc {}
+        &-desc {
+            font-weight: 400;
+            font-size: 9rem;
+            line-height: 222%;
+            color: var(--c-text-grey-light);
+            margin-bottom: 8rem;
+        }
 
-        &-size-price {}
+        &-size-price {
+            display: flex;
+            align-items: center;
+            gap: 22rem;
+            margin-bottom: 8rem;
 
-        &-amount {}
+            .cart-single-item-size {
+                border-radius: 10rem;
+                width: 72rem;
+                background: var(--c-bg-main);
+            }
+
+            .cart-single-item-price {
+                font-size: 20rem;
+                line-height: 100%;
+            }
+        }
+
+        &-amount {
+            display: flex;
+            align-items: center;
+            gap: 25rem;
+        }
     }
 }

@@ -1,0 +1,14 @@
+.item-amount-container {
+    width: 50rem;
+    padding: 5rem 22rem;
+    border: 1px solid var(--c-bg-btn);
+    border-radius: 7px;
+    background: var(--c-bg-main);
+    text-align: center;
+
+    .item-amount-value {
+        font-weight: 600;
+        font-size: 16rem;
+        line-height: 125%;
+    }
+}

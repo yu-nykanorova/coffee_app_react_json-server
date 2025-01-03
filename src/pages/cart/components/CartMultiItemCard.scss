@@ -1,27 +1,78 @@
 .multi-item-card {
+    padding: 9rem 17rem 15rem 12rem;
 
-    &__main-info {}
+    &__main-info {
+        display: flex;
+        align-items: center;
+        gap: 22rem;
+        margin-bottom: 10rem;
+    }
 
     &__image {
+        border-radius: 16rem;
+        max-width: 100rem;
+        max-height: 100rem;
+        display: flex;
 
-        img {}
+        img {
+            border-radius: 16rem;
+            object-fit: cover;
+        }
     }
 
     &__info {
 
-        &-title {}
+        &-title {
+            font-weight: 400;
+            font-size: 16rem;
+            line-height: 125%;
+        }
 
-        &-desc {}
+        &-desc {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 200%;
+            color: var(--c-text-grey-light);
+            margin-bottom: 10rem;
+        }
 
-        &-roast {}
+        &-roast {
+            border-radius: 10rem;
+            max-width: 118rem;
+            background: var(--c-bg-second);
+            padding: 10rem 16rem;
+            font-weight: 500;
+            font-size: 10rem;
+            line-height: 200%;
+            color: var(--c-text-grey-light);
+        }
     }
 
     &__buy-info {
+        display: flex;
+        align-items: center;
+        gap: 15rem;
 
-        &-size {}
+        &-size {
+            .cart-multi-item-size {
+                padding: 10rem;
+                border-radius: 10rem;
+                max-width: 72rem;
+                background: var(--c-bg-main);
+            }
+        }
 
-        &-price {}
+        &-price {
+            .cart-multi-item-price {
+                font-size: 15rem;
+                line-height: 125%;
+            }
+        }
 
-        &-amount {}
+        &-amount {
+            display: flex;
+            align-items: center;
+            gap: 15rem;
+        }
     }
 }

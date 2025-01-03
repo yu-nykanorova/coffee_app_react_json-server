@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom"
 import { useFetch } from "../../../hooks/useFetch";
+import PostDataService from "../../../services/PostDataService";
 import { BackArrow } from "../BackArrow/BackArrow";
 import { LikeHeart } from "../LikeHeart/LikeHeart";
 import { ButtonMain } from "../Buttons/ButtonMain";
 import { ItemMarker } from "../ItemMarker/ItemMarker";
-import { ItemSize } from "../ItemSize/ItemSize";
+import { ItemSizesList } from "../ItemSizesList/ItemSizesList";
 import { ItemPrice } from "../ItemPrice/ItemPrice";
 import "./Item.scss";
 
 export const Item = ({ itemsName }) => {
     const { id } = useParams();
     const { data: item, loading, error } = useFetch(`${itemsName}/${id}`);
+    const { postData } = PostDataService();
 
     const [selectedSize, setSelectedSize] = useState(
       itemsName === "drinks" ? "S" : "250g"
@@ -22,6 +24,19 @@ export const Item = ({ itemsName }) => {
     if (!item) return <h1>Selected item not found!</h1>;
 
     const currentPrice = item.price[selectedSize];
+
+    const newCartItem = {
+      id: item.id,
+      title: item.title,
+      comment: item.comment,
+      size: selectedSize,
+      price: item.price[selectedSize],
+      image: item.imgUrl
+    }
+
+    const handleAddToCart = () => {
+      postData(newCartItem);
+    }
 
     return (
       <div>
@@ -51,7 +66,7 @@ export const Item = ({ itemsName }) => {
           <p className="desc">Description</p>
           <p className="item-desc item-info-desc">{ item.desc }</p>
           <p className="desc">Size</p>
-          <ItemSize
+          <ItemSizesList
             itemsName={itemsName}
             selectedSize={selectedSize}
             onSizeChange={setSelectedSize}  
@@ -64,7 +79,7 @@ export const Item = ({ itemsName }) => {
               priceValue={currentPrice}
             />
           </div>
-          <ButtonMain type="submit" variant="primary">Add to Cart</ButtonMain>
+          <ButtonMain type="submit" variant="primary" onClick={handleAddToCart}>Add to Cart</ButtonMain>
         </div>
         </div>
       </div>
