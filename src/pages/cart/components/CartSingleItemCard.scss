@@ -4,7 +4,6 @@
     margin-inline: auto;
     border-radius: 23px;
     background: linear-gradient(137deg, #262b33 0%, rgba(38, 43, 51, 0) 100%);
-    border: 2px solid red;
     margin-bottom: 20rem;
 }
 
@@ -45,7 +44,7 @@
         &-size-price {
             display: flex;
             align-items: center;
-            gap: 22rem;
+            gap: 16rem;
             margin-bottom: 8rem;
 
             .cart-single-item-size {
@@ -55,7 +54,7 @@
             }
 
             .cart-single-item-price {
-                font-size: 20rem;
+                font-size: 19rem;
                 line-height: 100%;
             }
         }

@@ -154,19 +154,22 @@
   ],
   "cart": [
     {
-      "id": "5",
-      "title": "Macchiato",
-      "comment": "Foamed Milk",
-      "size": "L",
-      "price": 6.2
+      "id": "beans-2",
+      "title": "Arabica Beans",
+      "comment": "From Africa",
+      "size": "500g",
+      "price": 20,
+      "image": "/assets/img/arabica_beans_1.jpg",
+      "amount": 1
     },
     {
-      "id": "3",
-      "title": "Americano",
-      "comment": "Without Milk",
-      "size": "M",
-      "price": 5.2,
-      "image": "/assets/img/americano.jpg"
+      "id": "beans-2",
+      "title": "Arabica Beans",
+      "comment": "From Africa",
+      "size": "500g",
+      "price": 20,
+      "image": "/assets/img/arabica_beans_1.jpg",
+      "amount": 2
     }
   ]
 }

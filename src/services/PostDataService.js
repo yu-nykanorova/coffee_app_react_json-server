@@ -3,7 +3,7 @@ const PostDataService = () => {
   
     const postData = async (item) => {
         try {
-            const response = await fetch("http://localhost:3000/cart", {
+            const result = await fetch("http://localhost:3000/cart", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -11,7 +11,7 @@ const PostDataService = () => {
                 body: JSON.stringify(item),
             });
 
-            if (response.ok) {
+            if (result.ok) {
                 alert("Added");
             } else {
                 alert("Error");

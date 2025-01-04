@@ -13,6 +13,7 @@ import "./Item.scss";
 export const Item = ({ itemsName }) => {
     const { id } = useParams();
     const { data: item, loading, error } = useFetch(`${itemsName}/${id}`);
+    const { data: cartItems } = useFetch("cart");
     const { postData } = PostDataService();
 
     const [selectedSize, setSelectedSize] = useState(
@@ -26,17 +27,26 @@ export const Item = ({ itemsName }) => {
     const currentPrice = item.price[selectedSize];
 
     const newCartItem = {
-      id: item.id,
+      id: `${itemsName}-${item.id}`,
       title: item.title,
       comment: item.comment,
       size: selectedSize,
       price: item.price[selectedSize],
-      image: item.imgUrl
+      image: item.imgUrl,
+      amount: 1
     }
 
     const handleAddToCart = () => {
-      postData(newCartItem);
-    }
+      const existingItem = cartItems.find(
+        (cartItem) => cartItem.id === newCartItem.id && cartItem.size === newCartItem.size
+      );
+      if (existingItem) {
+        existingItem.amount += 1;
+        postData(existingItem);
+      } else {
+        postData(newCartItem);
+      }
+    };
 
     return (
       <div>

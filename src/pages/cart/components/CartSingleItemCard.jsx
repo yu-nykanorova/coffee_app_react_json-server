@@ -1,13 +1,11 @@
-import { useFetch } from "../../../hooks/useFetch";
 import { ButtonAddRemove } from "../../../shared/UI/Buttons/ButtonAddRemove"
 import { ItemAmount } from "../../../shared/UI/ItemAmount/ItemAmount";
 import { ItemPrice } from "../../../shared/UI/ItemPrice/ItemPrice";
 import { ItemSize } from "../../../shared/UI/ItemSize/ItemSize";
 import "./CartSingleItemCard.scss";
 
-export const CartSingleItemCard = () => {
-  const { data: item, loading, error } = useFetch("cart");
-
+export const CartSingleItemCard = ({ item }) => {
+ 
   return (
     <div className="card-container single-item-card">
         <div className="single-item-card__image">
@@ -22,7 +20,7 @@ export const CartSingleItemCard = () => {
             </div>
             <div className="single-item-card__info-amount">
                 <ButtonAddRemove form="minus"/>
-                <ItemAmount />
+                <ItemAmount amountValue="0"/>
                 <ButtonAddRemove form="plus"/>
             </div>
         </div>

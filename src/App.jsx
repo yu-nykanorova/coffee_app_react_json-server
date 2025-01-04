@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -67,10 +67,11 @@ const App = () => {
   return <RouterProvider router={router} />
 };
 
-const MainLayout = () => {
+const MainLayout = memo(() => {
   const { getPageTitle } = GetPageTitle();
   const location = useLocation();
   const pageTitle = getPageTitle(location.pathname);
+  console.log("MainLayout rendered");
 
   return (
     <>
@@ -81,6 +82,6 @@ const MainLayout = () => {
       <Sidebar />
     </>
   )
-};
+});
 
 export default App;
