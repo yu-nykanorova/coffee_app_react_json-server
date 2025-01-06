@@ -1,6 +1,6 @@
 import "./Buttons.scss";
 
-export const ButtonAddRemove = ({ form }) => {
+export const ButtonAddRemove = ({ form, onClick }) => {
 
   const renderButtonContent = () => {
     switch(form) {
@@ -20,6 +20,6 @@ export const ButtonAddRemove = ({ form }) => {
   }
 
   return (
-    <div className="btn btn-add-remove">{renderButtonContent()}</div>
+    <div className="btn btn-add-remove" onClick={onClick}>{renderButtonContent()}</div>
   )
 }

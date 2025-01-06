@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { useFetch } from "../../../hooks/useFetch";
 import PostDataService from "../../../services/PostDataService";
@@ -12,16 +12,25 @@ import "./Item.scss";
 
 export const Item = ({ itemsName }) => {
     const { id } = useParams();
-    const { data: item, loading, error } = useFetch(`${itemsName}/${id}`);
-    const { data: cartItems } = useFetch("cart");
-    const { postData } = PostDataService();
+    const { data: item, loading: itemLoading, error: itemError } = useFetch(`${itemsName}/${id}`, "GET");
+    const { data: initialCartItems } = useFetch("cart", "GET");
+    const { loadData: addCartItem } = useFetch(null, "POST");
+    const { loadData: updateCartItem } = useFetch(null, "PUT");
+
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+      if (initialCartItems) {
+        setCartItems(initialCartItems);
+      }
+    }, [initialCartItems]);
 
     const [selectedSize, setSelectedSize] = useState(
       itemsName === "drinks" ? "S" : "250g"
     );
 
-    if (loading) return <p>Loading item data...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (itemLoading) return <p>Loading item data...</p>;
+    if (itemError) return <p>Error: {itemError}</p>;
     if (!item) return <h1>Selected item not found!</h1>;
 
     const currentPrice = item.price[selectedSize];
@@ -36,15 +45,23 @@ export const Item = ({ itemsName }) => {
       amount: 1
     }
 
-    const handleAddToCart = () => {
+    const handleAddToCart = async () => {
       const existingItem = cartItems.find(
         (cartItem) => cartItem.id === newCartItem.id && cartItem.size === newCartItem.size
       );
       if (existingItem) {
-        existingItem.amount += 1;
-        postData(existingItem);
+        const updatedItem = { ...existingItem, amount: existingItem.amount + 1 };
+        await updateCartItem(updatedItem.id, updatedItem);
+        setCartItems((prev) => 
+          prev.map((cartItem) => 
+            cartItem.id === updatedItem.id && cartItem.size === updatedItem.size
+              ? updatedItem
+              : cartItem
+          )
+        );
       } else {
-        postData(newCartItem);
+        await addCartItem(null, newCartItem);
+        setCartItems((prev) => [...prev, newCartItem]);
       }
     };
 

@@ -1,3 +1,4 @@
+import { useFetch } from "../../../hooks/useFetch";
 import { ButtonAddRemove } from "../../../shared/UI/Buttons/ButtonAddRemove"
 import { ItemAmount } from "../../../shared/UI/ItemAmount/ItemAmount";
 import { ItemPrice } from "../../../shared/UI/ItemPrice/ItemPrice";
@@ -5,7 +6,20 @@ import { ItemSize } from "../../../shared/UI/ItemSize/ItemSize";
 import "./CartSingleItemCard.scss";
 
 export const CartSingleItemCard = ({ item }) => {
- 
+  const { data: initialCartItems } = useFetch("cart", "GET");
+  const { loadData: deleteCartItem } = useFetch(null, "DELETE");
+  const { loadData: updatedCartItem } = useFetch(null, "PUT");
+
+  const handleDelete = () => {
+    deleteCartItem(item.id);
+  };
+
+  const handleAdd = () => {
+    const updatedAmount = item.amount + 1;
+    updatedCartItem(item.id, { ...item, amount: updatedAmount });
+    alert("Item updated");
+  };
+
   return (
     <div className="card-container single-item-card">
         <div className="single-item-card__image">
@@ -19,9 +33,9 @@ export const CartSingleItemCard = ({ item }) => {
               <ItemPrice className="cart-single-item-price" priceValue={ item.price } />
             </div>
             <div className="single-item-card__info-amount">
-                <ButtonAddRemove form="minus"/>
-                <ItemAmount amountValue="0"/>
-                <ButtonAddRemove form="plus"/>
+                <ButtonAddRemove form="minus" onClick={handleDelete}/>
+                <ItemAmount amountValue={ item.amount }/>
+                <ButtonAddRemove form="plus" onClick={handleAdd}/>
             </div>
         </div>
     </div>

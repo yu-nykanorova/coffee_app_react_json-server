@@ -7,11 +7,9 @@ import { ItemPrice } from "../../shared/UI/ItemPrice/ItemPrice";
 import "./Cart.scss";
 
 export const Cart = () => {
-  const { data: items, loading, error } = useFetch("cart");
+  const { data: items, loading, error } = useFetch("cart", "GET");
 
   const totalPrice = items.reduce((total, i) => total + i.price, 0);
-
-  console.log("useeffect");
 
   if (loading) return <p>Loading item data...</p>;
   if (error) return <p>Error: {error}</p>;

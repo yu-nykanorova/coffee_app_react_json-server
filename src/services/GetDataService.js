@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 const GetDataService = () => {
 
-  const fetchData = useCallback (async (itemsName) => {
+  const getData = useCallback (async (itemsName) => {
       try {
         const result = await fetch(`http://localhost:3000/${itemsName}`);
         if(!result.ok) {
@@ -15,7 +15,7 @@ const GetDataService = () => {
       } 
   }, []);
 
-  return { fetchData };
+  return { getData };
   
 };
 

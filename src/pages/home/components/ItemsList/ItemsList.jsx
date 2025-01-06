@@ -5,7 +5,7 @@ import { ItemPrice } from "../../../../shared/UI/ItemPrice/ItemPrice";
 import "./ItemsList.scss";
 
 export const ItemsList = ({ itemsName, selectedCategory }) => {
-  const { data: items, loading, error } = useFetch(itemsName);
+  const { data: items, loading, error } = useFetch(itemsName, "GET");
 
   if (loading) return <p>Loading items list...</p>;
   

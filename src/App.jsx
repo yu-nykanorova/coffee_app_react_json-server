@@ -71,7 +71,6 @@ const MainLayout = memo(() => {
   const { getPageTitle } = GetPageTitle();
   const location = useLocation();
   const pageTitle = getPageTitle(location.pathname);
-  console.log("MainLayout rendered");
 
   return (
     <>

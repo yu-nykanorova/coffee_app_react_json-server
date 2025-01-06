@@ -1,7 +1,8 @@
+import { useCallback } from "react";
 
 const PostDataService = () => {
   
-    const postData = async (item) => {
+    const postData = useCallback(async (item) => {
         try {
             const result = await fetch("http://localhost:3000/cart", {
                 method: "POST",
@@ -14,14 +15,14 @@ const PostDataService = () => {
             if (result.ok) {
                 alert("Added");
             } else {
-                alert("Error");
+                throw new Error(`Failed to post data`);
             }
         } catch (error) {
-            console.error("Error:", error);
+            throw new Error(error.message);
         }
-    };
+    }, []);
 
     return { postData };
-}
+};
 
 export default PostDataService;
