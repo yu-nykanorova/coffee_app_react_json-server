@@ -5,19 +5,25 @@ import { ItemPrice } from "../../../shared/UI/ItemPrice/ItemPrice";
 import { ItemSize } from "../../../shared/UI/ItemSize/ItemSize";
 import "./CartSingleItemCard.scss";
 
-export const CartSingleItemCard = ({ item }) => {
-  const { data: initialCartItems } = useFetch("cart", "GET");
+export const CartSingleItemCard = ({ item, onUpdateCartItem }) => {
   const { loadData: deleteCartItem } = useFetch(null, "DELETE");
   const { loadData: updatedCartItem } = useFetch(null, "PUT");
 
-  const handleDelete = () => {
-    deleteCartItem(item.id);
+  const handleDelete = async () => {
+    if (item.amount > 1) {
+      const decreasedAmount = item.amount - 1;
+      const updatedItem = await updatedCartItem(item.id, { ...item, amount: decreasedAmount });
+      onUpdateCartItem(updatedItem);
+    } else {
+      await deleteCartItem(item.id);
+      onUpdateCartItem(null, item.id);
+    }
   };
 
-  const handleAdd = () => {
-    const updatedAmount = item.amount + 1;
-    updatedCartItem(item.id, { ...item, amount: updatedAmount });
-    alert("Item updated");
+  const handleAdd = async () => {
+    const increasedAmount = item.amount + 1;
+    const updatedItem = await updatedCartItem(item.id, { ...item, amount: increasedAmount });
+    onUpdateCartItem(updatedItem);
   };
 
   return (

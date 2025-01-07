@@ -1,3 +1,4 @@
+import { useState, useEffect, useMemo } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { ButtonMain } from "../../shared/UI/Buttons/ButtonMain";
 import { CartMultiItemCard } from "./components/CartMultiItemCard";
@@ -7,9 +8,32 @@ import { ItemPrice } from "../../shared/UI/ItemPrice/ItemPrice";
 import "./Cart.scss";
 
 export const Cart = () => {
-  const { data: items, loading, error } = useFetch("cart", "GET");
+  const { data: initialCartItems, loading, error, loadData } = useFetch("cart", "GET");
 
-  const totalPrice = items.reduce((total, i) => total + i.price, 0);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    setCartItems(initialCartItems || []);
+  }, [initialCartItems]);
+
+  const handleUpdateCartItem = async (updatedItem, itemId = null) => {
+    setCartItems((prevItems) => {
+      if (updatedItem) {
+        return prevItems.map((item) =>
+          item.id === updatedItem.id ? updatedItem : item
+        );
+      } else {
+        return prevItems.filter((item) => item.id !== itemId);
+      }
+    });
+    await loadData();
+  };
+
+  const totalPrice = useMemo(
+    () => 
+      cartItems.reduce((total, i) => total + i.price * i.amount, 0),
+    [cartItems]
+  );
 
   if (loading) return <p>Loading item data...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -17,8 +41,12 @@ export const Cart = () => {
   return (
     <div className="cart-container">
       <div className="cards-container">
-        {items.map((item) => (
-          <CartSingleItemCard key={ item.id } item={ item } />
+        {cartItems.map((item) => (
+          <CartSingleItemCard
+            key={item.id}
+            item={item}
+            onUpdateCartItem={handleUpdateCartItem}
+          />
         ))}
       </div>
       <div className="payment-info">
