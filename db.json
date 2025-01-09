@@ -154,22 +154,22 @@
   ],
   "cart": [
     {
-      "id": "beans-4",
-      "title": "Arabica Beans",
+      "id": "beans-3-500g",
+      "title": "Robusta Beans",
       "comment": "From Africa",
       "size": "500g",
       "price": 20,
-      "image": "/assets/img/arabica_beans_2.jpg",
+      "image": "/assets/img/robusta_beans_2.jpg",
       "amount": 2
     },
     {
-      "id": "drinks-5",
-      "title": "Macchiato",
-      "comment": "Foamed Milk",
+      "id": "drinks-2-S",
+      "title": "Cappuccino",
+      "comment": "With Foam",
       "size": "S",
       "price": 4.2,
-      "image": "/assets/img/macchiato.jpg",
-      "amount": 3
+      "image": "/assets/img/cappuccino_2.jpg",
+      "amount": 2
     }
   ]
 }

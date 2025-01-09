@@ -7,12 +7,12 @@ import "./CartSingleItemCard.scss";
 
 export const CartSingleItemCard = ({ item, onUpdateCartItem }) => {
   const { loadData: deleteCartItem } = useFetch(null, "DELETE");
-  const { loadData: updatedCartItem } = useFetch(null, "PUT");
+  const { loadData: updateCartItem } = useFetch(null, "PUT");
 
   const handleDelete = async () => {
     if (item.amount > 1) {
       const decreasedAmount = item.amount - 1;
-      const updatedItem = await updatedCartItem(item.id, { ...item, amount: decreasedAmount });
+      const updatedItem = await updateCartItem(item.id, { ...item, amount: decreasedAmount });
       onUpdateCartItem(updatedItem);
     } else {
       await deleteCartItem(item.id);
@@ -22,7 +22,7 @@ export const CartSingleItemCard = ({ item, onUpdateCartItem }) => {
 
   const handleAdd = async () => {
     const increasedAmount = item.amount + 1;
-    const updatedItem = await updatedCartItem(item.id, { ...item, amount: increasedAmount });
+    const updatedItem = await updateCartItem(item.id, { ...item, amount: increasedAmount });
     onUpdateCartItem(updatedItem);
   };
 

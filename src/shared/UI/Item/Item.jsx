@@ -36,7 +36,7 @@ export const Item = ({ itemsName }) => {
     const currentPrice = item.price[selectedSize];
 
     const newCartItem = {
-      id: `${itemsName}-${item.id}`,
+      id: `${itemsName}-${item.id}-${selectedSize}`,
       title: item.title,
       comment: item.comment,
       size: selectedSize,

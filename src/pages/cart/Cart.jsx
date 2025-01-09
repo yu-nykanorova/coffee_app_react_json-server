@@ -16,6 +16,17 @@ export const Cart = () => {
     setCartItems(initialCartItems || []);
   }, [initialCartItems]);
 
+  const groupedItemsById = useMemo(() => {
+    return cartItems.reduce((groups, item) => {
+      const baseId = item.id.split("-").slice(0, 2).join("-");
+      if (!groups[baseId]) {
+        groups[baseId] = [];
+      }
+      groups[baseId].push(item);
+      return groups;
+    }, {});
+  }, [cartItems]);
+
   const handleUpdateCartItem = async (updatedItem, itemId = null) => {
     setCartItems((prevItems) => {
       if (updatedItem) {
@@ -30,8 +41,7 @@ export const Cart = () => {
   };
 
   const totalPrice = useMemo(
-    () => 
-      cartItems.reduce((total, i) => total + i.price * i.amount, 0),
+    () => cartItems.reduce((total, i) => total + i.price * i.amount, 0),
     [cartItems]
   );
 
@@ -41,13 +51,21 @@ export const Cart = () => {
   return (
     <div className="cart-container">
       <div className="cards-container">
-        {cartItems.map((item) => (
-          <CartSingleItemCard
-            key={item.id}
-            item={item}
-            onUpdateCartItem={handleUpdateCartItem}
-          />
-        ))}
+        {Object.entries(groupedItemsById).map(([baseId, items]) =>
+          items.length === 1 ? (
+            <CartSingleItemCard
+              key={items[0].id}
+              item={items[0]}
+              onUpdateCartItem={handleUpdateCartItem}
+            />
+          ) : (
+            <CartMultiItemCard
+              key={baseId}
+              items={items}
+              onUpdateCartItem={handleUpdateCartItem}
+            />
+          )
+        )}        
       </div>
       <div className="payment-info">
         <div className="total-price">
