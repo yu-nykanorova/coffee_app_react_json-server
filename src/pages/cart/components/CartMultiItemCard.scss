@@ -1,5 +1,5 @@
 .multi-item-card {
-    padding: 9rem 17rem 15rem 12rem;
+    padding: 9rem 17rem 15rem 11rem;
 
     &__main-info {
         display: flex;
@@ -49,7 +49,9 @@
     }
 
     &__sizes {
-        
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
     }
 
     &__buy-info {

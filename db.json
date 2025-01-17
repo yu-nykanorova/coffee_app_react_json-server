@@ -154,22 +154,64 @@
   ],
   "cart": [
     {
-      "id": "beans-3-500g",
+      "id": "drinks-1-M",
+      "title": "Cappuccino",
+      "roast": "Medium Roasted",
+      "comment": "With Steamed Milk",
+      "size": "M",
+      "price": 5.2,
+      "image": "/assets/img/cappuccino_1.jpg",
+      "amount": 3
+    },
+    {
+      "id": "beans-1-250g",
       "title": "Robusta Beans",
+      "roast": "Medium Roasted",
+      "comment": "From Africa",
+      "size": "250g",
+      "price": 10.5,
+      "image": "/assets/img/robusta_beans_1.jpg",
+      "amount": 1
+    },
+    {
+      "id": "beans-1-500g",
+      "title": "Robusta Beans",
+      "roast": "Medium Roasted",
       "comment": "From Africa",
       "size": "500g",
       "price": 20,
-      "image": "/assets/img/robusta_beans_2.jpg",
-      "amount": 2
+      "image": "/assets/img/robusta_beans_1.jpg",
+      "amount": 1
     },
     {
-      "id": "drinks-2-S",
-      "title": "Cappuccino",
-      "comment": "With Foam",
+      "id": "drinks-3-S",
+      "title": "Americano",
+      "roast": "Medium Roasted",
+      "comment": "Without Milk",
       "size": "S",
       "price": 4.2,
-      "image": "/assets/img/cappuccino_2.jpg",
-      "amount": 2
+      "image": "/assets/img/americano.jpg",
+      "amount": 1
+    },
+    {
+      "id": "drinks-3-M",
+      "title": "Americano",
+      "roast": "Medium Roasted",
+      "comment": "Without Milk",
+      "size": "M",
+      "price": 5.2,
+      "image": "/assets/img/americano.jpg",
+      "amount": 1
+    },
+    {
+      "id": "beans-4-1000g",
+      "title": "Arabica Beans",
+      "roast": "Light Roast",
+      "comment": "From Africa",
+      "size": "1000g",
+      "price": 38,
+      "image": "/assets/img/arabica_beans_2.jpg",
+      "amount": 1
     }
   ]
 }

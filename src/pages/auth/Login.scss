@@ -1,11 +1,17 @@
 .login {
     width: 100%;
-    padding: 50rem 15%;
+    height: 100vh;
+    padding: 10%;
     display: flex;
     justify-content: center;
+    position: relative;
 
     &__content {
-        padding: 50rem;
+        position: absolute;
+        width: 80%;
+        min-height: 300rem;
+        top: 30%;
+        padding: 30rem;
         display: flex;
         flex-direction: column;
         background: linear-gradient(158.84deg, #3f4652 4%, rgba(38, 43, 51, 0.7) 91.93%);
@@ -20,11 +26,17 @@
         border: 0;
         outline: 0;
         padding: 10rem 5rem;
+
+        &::placeholder {
+            font-size: 12rem;
+        }
     }
 
     &__btn {
-        padding: 17rem 57rem;
+        width: 100%;
+        padding: 17rem 30rem;
         border-radius: 17rem;
+        font-size: 16rem;
     }
 }
 

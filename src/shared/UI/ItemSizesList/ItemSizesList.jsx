@@ -21,6 +21,7 @@ export const ItemSizesList = ({ itemsName, selectedSize, onSizeChange, className
                     <ItemSize
                         key={size}
                         size={size}
+                        className={itemsName === "beans" ? "item-size-beans" : ""}
                         isSelected={size === selectedSize}
                         onClick={() => handleSizeClick(size)}
                     />

@@ -25,6 +25,15 @@ export const CartMultiItemCard = ({ items, onUpdateCartItem }) => {
         const updatedItem = await updateCartItem(item.id, { ...item, amount: increasedAmount });
         onUpdateCartItem(updatedItem);
     };
+
+    const toggleClassName = (id) => {
+        const itemType = id.split("-").slice(0, 1).join("");
+        if (itemType === "beans") {
+           return "cart-item-size-beans"; 
+        } else {
+            return "cart-item-size-drinks";
+        }
+    };
     
     return (
         <div className="card-container multi-item-card">
@@ -42,7 +51,7 @@ export const CartMultiItemCard = ({ items, onUpdateCartItem }) => {
                 {items.map((item) => (
                     <div key={item.id} className="multi-item-card__buy-info">
                         <div className="multi-item-card__buy-info-size">
-                            <ItemSize className="cart-multi-item-size" size={item.size} />
+                            <ItemSize className={`cart-multi-item-size ${toggleClassName(item.id)}`} size={item.size} />
                         </div>
                         <div className="multi-item-card__buy-info-price">
                             <ItemPrice className="cart-multi-item-price" priceValue={item.price} />

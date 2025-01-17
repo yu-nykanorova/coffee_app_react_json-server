@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { useFetch } from "../../../hooks/useFetch";
-import PostDataService from "../../../services/PostDataService";
 import { BackArrow } from "../BackArrow/BackArrow";
 import { LikeHeart } from "../LikeHeart/LikeHeart";
 import { ButtonMain } from "../Buttons/ButtonMain";
@@ -38,6 +37,7 @@ export const Item = ({ itemsName }) => {
     const newCartItem = {
       id: `${itemsName}-${item.id}-${selectedSize}`,
       title: item.title,
+      roast: item.roast,
       comment: item.comment,
       size: selectedSize,
       price: item.price[selectedSize],

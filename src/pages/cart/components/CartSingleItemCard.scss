@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     gap: 12rem;
-    padding: 12rem 22rem 16rem 12rem;
+    padding: 12rem 18rem 16rem 11rem;
 
     &__image {
         border-radius: 16rem;
@@ -44,17 +44,17 @@
         &-size-price {
             display: flex;
             align-items: center;
-            gap: 16rem;
+            gap: 8rem;
             margin-bottom: 8rem;
 
             .cart-single-item-size {
                 border-radius: 10rem;
-                width: 72rem;
+                width: 80rem;
                 background: var(--c-bg-main);
             }
 
             .cart-single-item-price {
-                font-size: 19rem;
+                font-size: 18rem;
                 line-height: 100%;
             }
         }
