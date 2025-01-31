@@ -3,12 +3,24 @@
 
     .input-icon {
         position: absolute;
+
+        svg {
+            @include tablet-small {
+                width: 24rem;
+                height: 24rem;
+            }
+        }
     }
 
     .input-icon-left {
         display: flex;
         left: -20rem;
         top: 9rem;
+
+        @include tablet-small {
+            left: -25rem;
+            top: 7rem;
+        }
     }
 
     .input-icon-right {
@@ -16,6 +28,10 @@
         right: 5rem;
         top: 12rem;
         cursor: pointer;
+
+        @include tablet-small {
+            top: 8rem;
+        }
     }
 
     .password-icon.active {

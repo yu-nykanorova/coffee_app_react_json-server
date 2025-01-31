@@ -17,6 +17,12 @@
             margin-bottom: 10rem;
             width: 126rem;
             height: 126rem;
+
+            @include tablet-small {
+                width: 180rem;
+                height: 180rem;
+            }
+
             img {
                 border-radius: 16rem;
             }
@@ -37,6 +43,13 @@
                 color: var(--c-bg-btn);
                 font-size: 10rem;
                 line-height: 200%;
+
+                @include tablet-small {
+                    font-size: 12rem;
+                }
+                @include tablet {
+                    font-size: 14rem;
+                }
             }
     
             .rating_value {
@@ -44,6 +57,13 @@
                 font-size: 10rem;
                 line-height: 200%;
                 color: var(--c-white);
+
+                @include tablet-small {
+                    font-size: 14rem;
+                }
+                @include tablet {
+                    font-size: 16rem;
+                }
             }
         }
 
@@ -53,6 +73,10 @@
             line-height: 222%;
             color: var(--c-white);
             margin-bottom: 3rem;
+
+            @include tablet-small {
+                font-size: 12rem;
+            }
         }
 
         &-buy-info { 

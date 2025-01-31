@@ -14,14 +14,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include tablet {
+            width: 40rem;
+            height: 40rem;
+        }
     }
   
     .icon-menu {
         font-size: 14rem;
+
+        @include tablet {
+            font-size: 20rem;
+        }
   
         &::before {
             color: rgba(255, 255, 255, 0.18);
-      }
+        }
     }
 
     .page-title {
@@ -35,6 +44,10 @@
             
             .icon-coffee::before {
                 font-size: 16rem;
+
+                @include tablet {
+                    font-size: 22rem;
+                }
             }
         }
     }

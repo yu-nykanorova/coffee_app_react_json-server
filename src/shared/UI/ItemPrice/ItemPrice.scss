@@ -5,6 +5,13 @@
     line-height: 133%;
     color: var(--c-white);
 
+    @include tablet-small {
+        font-size: 18rem;
+    }
+    @include tablet {
+        font-size: 20rem;
+    }
+
     span {
         color: var(--c-bg-btn);
     }
@@ -12,4 +19,11 @@
 
 .price-value-large {
     font-size: 20rem;
+
+    @include tablet-small {
+        font-size: 22rem;
+    }
+    @include tablet {
+        font-size: 26rem;
+    }
 }

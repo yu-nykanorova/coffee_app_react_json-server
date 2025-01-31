@@ -73,13 +73,13 @@ const MainLayout = memo(() => {
   const pageTitle = getPageTitle(location.pathname);
 
   return (
-    <>
+    <div className="container">
       <Header title={ pageTitle } />
       <div className="main">
           <Outlet />
       </div>
       <Sidebar />
-    </>
+    </div>
   )
 });
 

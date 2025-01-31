@@ -10,9 +10,19 @@
     width: 33rem;
     height: 33rem;
 
+    @include tablet {
+        width: 40rem;
+        height: 40rem;
+    }
+
     .icon-chevron-left::before, .icon-heart::before {
         color: var(--c-text-grey);
         font-size: 15rem;
+
+        @include tablet {
+            font-size: 20rem;
+            font-weight: 600;
+        }
     }
 
     &.liked .icon-heart::before {

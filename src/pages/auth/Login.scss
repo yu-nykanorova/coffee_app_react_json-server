@@ -9,6 +9,7 @@
     &__content {
         position: absolute;
         width: 80%;
+        max-width: 600rem;
         min-height: 300rem;
         top: 30%;
         padding: 30rem;
@@ -29,6 +30,10 @@
 
         &::placeholder {
             font-size: 12rem;
+
+            @include tablet-small {
+                font-size: 14rem;
+            }
         }
     }
 
@@ -37,6 +42,13 @@
         padding: 17rem 30rem;
         border-radius: 17rem;
         font-size: 16rem;
+
+        @include tablet-small {
+            width: 60%;
+        }
+        @include tablet {
+            font-size: 18rem;
+        }
     }
 }
 

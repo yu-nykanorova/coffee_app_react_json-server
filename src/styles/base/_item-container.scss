@@ -5,6 +5,10 @@
     padding: 12rem 11rem 20rem;
     background: linear-gradient(158.84deg, #262B33 4%, rgba(38, 43, 51, 0) 91.93%);
     border-radius: 23rem;
+
+    @include tablet-small {
+        max-width: 300rem;
+    }
 }
 
 .item-title {
@@ -12,4 +16,11 @@
     font-size: 13rem;
     line-height: 154%;
     color: var(--c-white);
+
+    @include tablet-small {
+        font-size: 16rem;
+    }
+    @include tablet-small {
+        font-size: 18rem;
+    }
 }

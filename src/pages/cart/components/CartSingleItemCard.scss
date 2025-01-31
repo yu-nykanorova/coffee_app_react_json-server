@@ -18,6 +18,12 @@
         max-width: 126rem;
         max-height: 126rem;
         display: flex;
+        
+        @include tablet-small {
+            max-width: initial;
+            max-height: auto;
+            flex: 0 0 calc(35% - 12rem);
+        }
 
         img {
             border-radius: 16rem;
@@ -26,11 +32,19 @@
     }
 
     &__info {
+
+        @include tablet-small {
+            flex: 0 0 65%;
+        }
         
         &-title {
             font-weight: 400;
             font-size: 15rem;
             line-height: 133%;
+
+            @include tablet-small {
+                font-size: 18rem;
+            }
         }
 
         &-desc {
@@ -39,6 +53,10 @@
             line-height: 222%;
             color: var(--c-text-grey-light);
             margin-bottom: 8rem;
+
+            @include tablet-small {
+                font-size: 12rem;
+            }
         }
 
         &-size-price {

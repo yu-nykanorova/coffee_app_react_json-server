@@ -5,6 +5,14 @@
     padding: 20rem 73rem;
     color: var(--c-white);
     border-radius: 20rem;
+
+    @include tablet-small {
+        font-size: 18rem;
+    }
+
+    @include tablet {
+        font-size: 20rem;
+    }
 }
 
 .btn-add-remove { 
@@ -16,8 +24,17 @@
     align-items: center;
     justify-content: center;
 
+    @include tablet {
+        width: 36rem;
+        height: 36rem;
+    }
+
     .icon-plus, .icon-minus {
         font-size: 9rem;
         line-height: normal;
+
+        @include tablet {
+            font-size: 16rem;
+        }
     }
 }

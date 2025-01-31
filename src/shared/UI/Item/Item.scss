@@ -12,6 +12,11 @@
     position: relative;
     width: 100%;
     height: 520rem;
+
+    @include tablet-small {
+        height: 800rem;
+    }
+
     img {
         height: 100%;
         width: 100%;
@@ -29,6 +34,14 @@
         line-height: 100%;
         color: var(--c-white);
         margin-bottom: 3rem;
+
+        @include tablet-small {
+            font-size: 24rem;
+        }
+        @include tablet {
+            font-size: 32rem;
+            margin-bottom: 12rem;
+        }
      }
 	&__comment {
         font-weight: 400;
@@ -36,10 +49,17 @@
         line-height: 167%;
         color: var(--c-text-grey-light);
         margin-bottom: 25rem;
+
+        @include tablet-small {
+            font-size: 14rem;
+        }
+        @include tablet {
+            font-size: 20rem;
+        }
      }
 	&__rating {
         display: flex;
-        align-items: baseline;
+        align-items: center;
         gap: 5rem;
 
         .rating { 
@@ -47,6 +67,11 @@
             font-size: 16rem;
             line-height: 125%;
             color: var(--c-white);
+
+            @include tablet {
+                font-size: 18rem;
+            }
+
             &.voted {
                 color: var(--c-bg-btn);
             }
@@ -57,6 +82,13 @@
             line-height: 200%;
             color: var(--c-text-grey-light);
             align-self: center;
+
+            @include tablet-small {
+                font-size: 12rem;
+            }
+            @include tablet {
+                font-size: 16rem;
+            }
         }
 
         .icon-star.voted::before {
@@ -70,7 +102,14 @@
         flex-direction: column;
         align-items: center;
         max-width: 140rem;
-     }
+
+        @include tablet-small {
+            max-width: 180rem;
+        }
+        @include tablet {
+            max-width: 240rem;
+        }
+    }
 }
 
 .markers {
@@ -79,6 +118,13 @@
     justify-content: space-between;
     max-width: 131rem;
     gap: 20rem;
+    
+    @include tablet-small {
+        max-width: 180rem;
+    }
+    @include tablet {
+        max-width: 240rem;
+    }
  }
 
 .marker { 
@@ -91,11 +137,27 @@
     border-radius: 10rem;
     padding: 9rem;
     background: var(--c-bg-second);
+
+    @include tablet-small {
+        padding: 9rem 4rem;
+    }
+    @include tablet {
+        width: 70rem;
+        height: 70rem;
+    }
+    
     p {
         font-weight: 500;
         font-size: 10rem;
         line-height: 100%;
         color: var(--c-text-grey-light);
+
+        @include tablet-small {
+            font-size: 11rem;
+        }
+        @include tablet {
+            font-size: 16rem;
+        }
     }
 }
 
@@ -130,6 +192,14 @@
     color: var(--c-text-grey-light);
     border-radius: 10rem;
     background: var(--c-bg-second);
+
+    @include tablet-small {
+        font-size: 12rem;
+        padding: 12rem 18rem;
+    }
+    @include tablet {
+        font-size: 16rem;
+    }
 }
 
 .item-info-container { 
@@ -142,10 +212,26 @@
     line-height: 143%;
     color: var(--c-text-grey-light);
     margin-bottom: 15rem;
+
+    @include tablet-small {
+        font-size: 16rem;
+    }
+    @include tablet {
+        font-size: 20rem;
+        margin-bottom: 20rem;
+    }
 }
 
 .item-info-desc {
     margin-bottom: 10rem;
+
+    @include tablet-small {
+        font-size: 14rem;
+    }
+    @include tablet {
+        font-size: 20rem;
+        margin-bottom: 20rem;
+    }
 }
 
 .item-info-buy { 
@@ -165,6 +251,13 @@
         line-height: 167%;
         color: var(--c-text-grey-light);
         margin-bottom: 3rem;
+
+        @include tablet-small {
+            font-size: 16rem;
+        }
+        @include tablet {
+            font-size: 18rem;
+        }
     }
 }
 

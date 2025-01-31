@@ -7,6 +7,10 @@
   
   .sidebar-link {
     font-size: 24rem;
+
+    @include tablet {
+      font-size: 28rem;
+    }
   
     &__icon::before {
       transition: var(--transition);
