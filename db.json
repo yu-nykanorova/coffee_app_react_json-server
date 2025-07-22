@@ -184,16 +184,6 @@
       "amount": 1
     },
     {
-      "id": "drinks-3-S",
-      "title": "Americano",
-      "roast": "Medium Roasted",
-      "comment": "Without Milk",
-      "size": "S",
-      "price": 4.2,
-      "image": "/assets/img/americano.jpg",
-      "amount": 1
-    },
-    {
       "id": "drinks-3-M",
       "title": "Americano",
       "roast": "Medium Roasted",
@@ -201,16 +191,6 @@
       "size": "M",
       "price": 5.2,
       "image": "/assets/img/americano.jpg",
-      "amount": 1
-    },
-    {
-      "id": "beans-4-1000g",
-      "title": "Arabica Beans",
-      "roast": "Light Roast",
-      "comment": "From Africa",
-      "size": "1000g",
-      "price": 38,
-      "image": "/assets/img/arabica_beans_2.jpg",
       "amount": 1
     }
   ]

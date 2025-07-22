@@ -1,4 +1,3 @@
-
 export const Notification = () => {
   return (
     <div className="dev-info">

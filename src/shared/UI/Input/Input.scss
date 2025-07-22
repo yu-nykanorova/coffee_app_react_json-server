@@ -1,6 +1,10 @@
 .input-label {
     position: relative;
 
+    input {
+        height: 100%;
+    }
+
     .input-icon {
         position: absolute;
 
@@ -15,22 +19,22 @@
     .input-icon-left {
         display: flex;
         left: -20rem;
-        top: 9rem;
+        top: 15rem;
 
         @include tablet-small {
-            left: -25rem;
-            top: 7rem;
+            left: -30rem;
+            top: 15rem;
         }
     }
 
     .input-icon-right {
         display: flex;
         right: 5rem;
-        top: 12rem;
+        top: 20rem;
         cursor: pointer;
 
         @include tablet-small {
-            top: 8rem;
+            top: 20rem;
         }
     }
 

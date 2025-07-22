@@ -17,6 +17,7 @@ import { BeanPage } from "./pages/beans/BeanPage.jsx";
 import { Header } from "./shared/components/Header/Header.jsx";
 import { Sidebar } from "./shared/components/Sidebar/Sidebar.jsx";
 import GetPageTitle from "./services/GetPageTitle.js";
+import { Contacts } from "./pages/contacts/Contacts.jsx";
 
 const App = () => {
 
@@ -55,6 +56,10 @@ const App = () => {
         {
           path: "cart",
           element: <Cart />,
+        },
+        {
+          path: "contacts",
+          element: <Contacts />,
         },
         {
           path: "*",

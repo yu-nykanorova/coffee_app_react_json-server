@@ -4,13 +4,20 @@ const PostDataService = () => {
   
     const postData = useCallback(async (item) => {
         try {
-            const result = await fetch("http://localhost:3000/cart", {
+            const result = await fetch(`${import.meta.env.VITE_API_URL}/cart`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(item),
             });
+            // const result = await fetch("http://localhost:3000/cart", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(item),
+            // });
 
             if (result.ok) {
                 alert("Added");

@@ -3,13 +3,20 @@ import { useCallback } from "react";
 const PutDataService = () => {
     const updateData = useCallback(async (id, updatedItem) => {
         try {
-            const result = await fetch(`http://localhost:3000/cart/${id}`, {
+            const result = await fetch(`${import.meta.env.VITE_API_URL}/cart/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(updatedItem),
             });
+            // const result = await fetch(`http://localhost:3000/cart/${id}`, {
+            //     method: "PUT",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(updatedItem),
+            // });
 
             if (result.ok) {
                 alert("Item updated successfully!");

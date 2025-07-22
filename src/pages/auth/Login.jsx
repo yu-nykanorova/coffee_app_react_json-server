@@ -13,6 +13,8 @@ export const Login = () => {
   return (
     <div className="login">
       <div className="login__content">
+        <p>This feature is still under construction</p>
+        <p>Press the button "Login..." to return the home page</p>
         <Input
           value={email}
           setValue={setEmail}

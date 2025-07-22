@@ -4,7 +4,8 @@ const GetDataService = () => {
 
   const getData = useCallback (async (itemsName) => {
       try {
-        const result = await fetch(`http://localhost:3000/${itemsName}`);
+        const result = await fetch(`${import.meta.env.VITE_API_URL}/${itemsName}`);
+        // const result = await fetch(`http://localhost:3000/${itemsName}`);
         if(!result.ok) {
           throw new Error(`Failed to fetch ${itemsName} data`);
         }
