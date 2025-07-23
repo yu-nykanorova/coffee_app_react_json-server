@@ -14,7 +14,7 @@ export const Login = () => {
     <div className="login">
       <div className="login__content">
         <p>This feature is still under construction</p>
-        <p>Press the button "Login..." to return the home page</p>
+        <p>Press the button "Continue" to return the home page</p>
         <Input
           value={email}
           setValue={setEmail}
@@ -36,7 +36,7 @@ export const Login = () => {
             className="login__btn"
             type="submit"
             variant="primary"
-            label="Login to Continue"
+            label="Continue"
           />
         </Link>
       </div>

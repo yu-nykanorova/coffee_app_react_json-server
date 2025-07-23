@@ -1,3 +1,5 @@
+@use '../../../../styles/helpers/mixins' as *;
+
 .search-form {
     display: flex;
     align-items: center;

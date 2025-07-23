@@ -1,3 +1,5 @@
+@use '../../../styles/helpers/mixins' as *;
+
 .price-value {
     font-family: var(--font-family);
     font-weight: 600;

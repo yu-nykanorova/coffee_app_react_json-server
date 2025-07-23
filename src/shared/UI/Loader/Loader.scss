@@ -1,0 +1,48 @@
+@use '../../../styles/helpers/mixins' as *;
+
+.loader {
+    margin-bottom: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    text-align: center;
+
+    &-item {
+        width: 200rem;
+        height: 48rem;
+        margin-inline: auto;
+        margin-bottom: 30rem;
+        position: relative;
+        animation: split 1s ease-in infinite alternate;
+
+        &::before , &::after {
+            content: '';
+            position: absolute;
+            height: 70rem;
+            width: 70rem;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            transform: translateX(-10rem);
+            background: var(--c-bg-btn);
+            opacity: 0.75;
+            backdrop-filter: blur(20rem);
+        }
+          
+        &::after {
+            left: auto;
+            right: 0;
+            background: var(--c-white);
+            transform: translateX(10rem);
+        }
+          
+        @keyframes split {
+            0% , 25%{ width: 64rem }
+            100%{ width: 148rem }
+        }    
+    }
+
+    p {
+        font-size: 20rem;
+    }
+}

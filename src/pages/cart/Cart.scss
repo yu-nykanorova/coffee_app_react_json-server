@@ -1,3 +1,5 @@
+//@use '../../styles/helpers/mixins' as *;
+
 .cart-container {
     padding: 0 20rem;
 
@@ -22,8 +24,6 @@
                 color: var(--c-text-grey-light);
                 margin-bottom: 6rem;
             }
-    
-            .price-amount {}
         }
     
         .cart-pay-btn {

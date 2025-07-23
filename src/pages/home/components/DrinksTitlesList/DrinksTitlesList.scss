@@ -1,3 +1,5 @@
+@use '../../../../styles/helpers/mixins' as *;
+
 .drinks-list {
     min-height: 34rem;
     overflow: auto;

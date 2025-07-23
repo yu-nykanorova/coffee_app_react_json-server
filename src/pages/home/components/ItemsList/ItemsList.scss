@@ -1,3 +1,5 @@
+@use '../../../../styles/helpers/mixins' as *;
+
 .items-list {
     overflow: auto;
     white-space: nowrap;

@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { ButtonAddRemove } from "../../../../shared/UI/Buttons/ButtonAddRemove";
 import { useFetch } from "../../../../hooks/useFetch";
 import { ItemPrice } from "../../../../shared/UI/ItemPrice/ItemPrice";
+import { Loader } from "../../../../shared/UI/Loader/Loader";
 import "./ItemsList.scss";
 
 export const ItemsList = ({ itemsName, selectedCategory }) => {
   const { data: items, loading, error } = useFetch(itemsName, "GET");
 
-  if (loading) return <p>Loading items list...</p>;
+  if (loading) return <Loader />;
   
   if (error) return <p>Error: {error}</p>;
 

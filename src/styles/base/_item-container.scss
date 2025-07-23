@@ -1,3 +1,5 @@
+@use '../../styles/helpers/mixins' as *;
+
 .item-container {
     display: inline-block;
     margin-right: 22rem;

@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: json-server
-    env: node
-    buildCommand: npm install
-    startCommand: node server.cjs
-    plan: free
-    region: oregon

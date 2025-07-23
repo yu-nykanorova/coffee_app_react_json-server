@@ -1,3 +1,5 @@
+@use '../../../styles/helpers/mixins' as *;
+
 .back-and-like {
     display: flex;
     justify-content: space-between;
