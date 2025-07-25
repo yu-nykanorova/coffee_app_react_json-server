@@ -1,6 +1,7 @@
 @use '../../../styles/helpers/mixins' as *;
 
 .loader {
+    margin-top: 50rem;
     margin-bottom: 50rem;
     display: flex;
     flex-direction: column;

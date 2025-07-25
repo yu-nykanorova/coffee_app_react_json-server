@@ -7,6 +7,7 @@ import { ButtonMain } from "../Buttons/ButtonMain";
 import { ItemMarker } from "../ItemMarker/ItemMarker";
 import { ItemSizesList } from "../ItemSizesList/ItemSizesList";
 import { ItemPrice } from "../ItemPrice/ItemPrice";
+import { Loader } from "../Loader/Loader";
 import "./Item.scss";
 
 export const Item = ({ itemsName }) => {
@@ -28,7 +29,7 @@ export const Item = ({ itemsName }) => {
       itemsName === "drinks" ? "S" : "250g"
     );
 
-    if (itemLoading) return <p>Loading item data...</p>;
+    if (itemLoading) return <Loader>Loading item data</Loader>;
     if (itemError) return <p>Error: {itemError}</p>;
     if (!item) return <h1>Selected item not found!</h1>;
 

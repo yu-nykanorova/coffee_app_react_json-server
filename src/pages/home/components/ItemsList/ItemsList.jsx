@@ -8,9 +8,9 @@ import "./ItemsList.scss";
 export const ItemsList = ({ itemsName, selectedCategory }) => {
   const { data: items, loading, error } = useFetch(itemsName, "GET");
 
-  if (loading) return <Loader />;
+  if (loading) return <Loader>Loading { itemsName } list</Loader>;
   
-  if (error) return <p>Error: {error}</p>;
+  if (error) return <p>Error: { error }</p>;
 
   const filteredItems = selectedCategory ?
     items.filter(item => item.category.includes(selectedCategory))

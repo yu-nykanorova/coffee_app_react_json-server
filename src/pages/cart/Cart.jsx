@@ -4,6 +4,7 @@ import { ButtonMain } from "../../shared/UI/Buttons/ButtonMain";
 import { CartMultiItemCard } from "./components/CartMultiItemCard";
 import { CartSingleItemCard } from "./components/CartSingleItemCard";
 import { ItemPrice } from "../../shared/UI/ItemPrice/ItemPrice";
+import { Loader } from "../../shared/UI/Loader/Loader";
 
 import "./Cart.scss";
 
@@ -45,7 +46,7 @@ export const Cart = () => {
     [cartItems]
   );
 
-  if (loading) return <p>Loading item data...</p>;
+  if (loading) return <Loader>Loading cart data</Loader>;
   if (error) return <p>Error: {error}</p>;
 
   return (
