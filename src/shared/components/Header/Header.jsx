@@ -8,7 +8,7 @@ export const Header = ({ title }) => {
 
   const location = useLocation();
 
-  if (location.pathname.includes("/auth")) {
+  if (location.pathname.includes("/drink") || location.pathname.includes("/bean") || location.pathname.includes("/auth")) {
     return null;
   }
 
